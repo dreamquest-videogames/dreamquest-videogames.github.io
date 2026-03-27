@@ -7,14 +7,12 @@ export default function Navbar() {
 
   const navLinks = [
     { href: "#services", label: "Services" },
-    { href: "#inventory", label: "Inventory" },
-    { href: "#collectibles", label: "Collectibles" },
     { href: "#about", label: "About" },
     { href: "#contact", label: "Contact" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0A0E14]/95 backdrop-blur-sm border-b border-[#7B4EA0]/40">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#7B4EA0]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -43,7 +41,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-gray-300 hover:text-[#48D8D0] transition-colors duration-200 font-medium"
+                className="text-sm text-[#4A4458] hover:text-[#7B4EA0] transition-colors duration-200 font-medium"
               >
                 {link.label}
               </a>
@@ -61,7 +59,7 @@ export default function Navbar() {
             {/* Mobile menu button */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="md:hidden text-gray-300 hover:text-white p-2"
+              className="md:hidden text-[#4A4458] hover:text-[#1A1020] p-2"
             >
               <div className="space-y-1.5">
                 <span className={`block h-0.5 w-6 bg-current transition-all ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
@@ -74,13 +72,13 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         {menuOpen && (
-          <div className="md:hidden border-t border-[#7B4EA0]/30 py-4 space-y-3">
+          <div className="md:hidden border-t border-[#7B4EA0]/20 py-4 space-y-3 bg-white">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="block text-sm text-gray-300 hover:text-[#48D8D0] transition-colors py-1"
+                className="block text-sm text-[#4A4458] hover:text-[#7B4EA0] transition-colors py-1"
               >
                 {link.label}
               </a>

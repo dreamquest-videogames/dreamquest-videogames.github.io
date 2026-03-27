@@ -87,7 +87,6 @@ export default function Contact() {
                     <option value="sell">Sell My Games / Trade-In</option>
                     <option value="repair">Console Repair Quote</option>
                     <option value="disc">Disc Resurfacing</option>
-                    <option value="collectible">Anime Figure / Collectible</option>
                     <option value="other">Other Question</option>
                   </select>
                 </div>

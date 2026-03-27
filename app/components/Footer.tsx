@@ -25,7 +25,7 @@ export default function Footer() {
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-4 max-w-xs">
               Your local destination for retro and modern video games, accessories,
-              anime collectibles, and console restoration services.
+              and console restoration services.
             </p>
             <div className="font-pixel text-[9px] text-[#50C890] glow-green">
               &quot;Keeping Score Since &apos;24&quot;
@@ -39,7 +39,6 @@ export default function Footer() {
               {[
                 { href: "#services", label: "Our Services" },
                 { href: "#inventory", label: "Featured Inventory" },
-                { href: "#collectibles", label: "Anime Collectibles" },
                 { href: "#about", label: "About Us" },
                 { href: "#contact", label: "Contact" },
               ].map((link) => (
@@ -62,7 +61,6 @@ export default function Footer() {
               {[
                 "Buy & Sell Games",
                 "Gaming Accessories",
-                "Anime Collectibles",
                 "Console Reconditioning",
                 "Disc Resurfacing",
               ].map((service) => (

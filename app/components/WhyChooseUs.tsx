@@ -58,37 +58,37 @@ const trustSignals = [
 const colorMap = {
   purple: {
     border: "border-[#7B4EA0]/30 hover:border-[#7B4EA0]/70",
-    icon: "bg-[#7B4EA0]/20",
+    icon: "bg-[#7B4EA0]/15",
     stat: "text-[#7B4EA0]",
-    label: "text-[#7B4EA0]/60",
+    label: "text-[#7B4EA0]/70",
   },
   teal: {
     border: "border-[#48D8D0]/30 hover:border-[#48D8D0]/70",
-    icon: "bg-[#48D8D0]/20",
-    stat: "text-[#48D8D0]",
-    label: "text-[#48D8D0]/60",
+    icon: "bg-[#48D8D0]/15",
+    stat: "text-[#2AA8A2]",
+    label: "text-[#2AA8A2]/70",
   },
   green: {
     border: "border-[#50C890]/30 hover:border-[#50C890]/70",
-    icon: "bg-[#50C890]/20",
-    stat: "text-[#50C890]",
-    label: "text-[#50C890]/60",
+    icon: "bg-[#50C890]/15",
+    stat: "text-[#3A9A70]",
+    label: "text-[#3A9A70]/70",
   },
 };
 
 export default function WhyChooseUs() {
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0A0E14]">
+    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F4F0FA]">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
-            <span className="font-pixel text-[10px] text-[#48D8D0]">// WHY DREAM QUEST</span>
+            <span className="font-pixel text-[10px] text-[#2AA8A2]">// WHY DREAM QUEST</span>
           </div>
-          <h2 className="font-pixel text-xl sm:text-2xl text-white mb-4">
-            Why Choose <span className="text-[#48D8D0] glow-teal">Us</span>
+          <h2 className="font-pixel text-xl sm:text-2xl text-[#1A1020] mb-4">
+            Why Choose <span className="text-[#2AA8A2] glow-teal">Us</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-[#4A4458] max-w-2xl mx-auto">
             In a world of online marketplaces and big-box retailers, Dream Quest is something different.
             A place where games are respected, history is preserved, and every customer matters.
           </p>
@@ -101,7 +101,7 @@ export default function WhyChooseUs() {
             return (
               <div
                 key={idx}
-                className={`bg-[#060A10] border ${colors.border} p-6 card-hover transition-all duration-300`}
+                className={`bg-white border ${colors.border} p-6 card-hover transition-all duration-300`}
               >
                 {/* Icon + stat row */}
                 <div className="flex items-start justify-between mb-4">
@@ -114,27 +114,27 @@ export default function WhyChooseUs() {
                   </div>
                 </div>
 
-                <h3 className="font-pixel text-xs text-white mb-3">{signal.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{signal.description}</p>
+                <h3 className="font-pixel text-xs text-[#1A1020] mb-3">{signal.title}</h3>
+                <p className="text-[#4A4458] text-sm leading-relaxed">{signal.description}</p>
               </div>
             );
           })}
         </div>
 
         {/* Valerie lore section */}
-        <div className="bg-gradient-to-r from-[#7B4EA0]/10 via-[#0A0E14] to-[#48D8D0]/10 border border-[#7B4EA0]/30 p-8 sm:p-10">
+        <div className="bg-gradient-to-r from-[#7B4EA0]/10 via-white to-[#48D8D0]/10 border border-[#7B4EA0]/30 p-8 sm:p-10">
           <div className="max-w-3xl mx-auto text-center">
             <div className="font-pixel text-[10px] text-[#7B4EA0] mb-4">⚔️ THE LEGEND OF VALERIE ⚔️</div>
-            <h3 className="font-pixel text-base text-white mb-4">
+            <h3 className="font-pixel text-base text-[#1A1020] mb-4">
               Our Mascot Has a Story
             </h3>
-            <p className="text-gray-300 text-sm leading-relaxed mb-4">
+            <p className="text-[#4A4458] text-sm leading-relaxed mb-4">
               Valerie the Viking didn&apos;t choose the quest — the quest chose her.
               A warrior of pixels and persistence, she once roamed the digital realms
               from Atari dungeons to PS5 boss battles. She&apos;s seen every era,
               fought every final boss, and traded in every game imaginable.
             </p>
-            <p className="text-gray-300 text-sm leading-relaxed">
+            <p className="text-[#4A4458] text-sm leading-relaxed">
               Now she guards the Dream Quest vault, ensuring every game that passes
               through her hands is worthy of a new player&apos;s shelf. She&apos;s the reason
               we don&apos;t sell junk. She won&apos;t allow it.

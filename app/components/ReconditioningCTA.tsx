@@ -1,23 +1,23 @@
 export default function ReconditioningCTA() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-b from-[#060A10] to-[#0A0E14]">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-[#FAFAFA]">
       {/* Background decorations */}
-      <div className="absolute inset-0 hero-grid opacity-30" />
+      <div className="absolute inset-0 hero-grid opacity-40" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#7B4EA0]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-5xl mx-auto">
-        <div className="pixel-border bg-[#0A0E14]/80 p-8 sm:p-12">
+        <div className="pixel-border bg-white p-8 sm:p-12">
           <div className="text-center mb-10">
             <div className="inline-block mb-4">
               <span className="font-pixel text-[10px] text-[#7B4EA0]">// REPAIR & RESTORE</span>
             </div>
-            <h2 className="font-pixel text-xl sm:text-2xl text-white mb-4">
+            <h2 className="font-pixel text-xl sm:text-2xl text-[#1A1020] mb-4">
               Console{" "}
               <span className="text-[#7B4EA0] glow-purple">Reconditioning</span>
               <br />
               <span className="text-lg sm:text-xl">& Disc Resurfacing</span>
             </h2>
-            <p className="text-gray-300 max-w-2xl mx-auto text-base leading-relaxed">
+            <p className="text-[#4A4458] max-w-2xl mx-auto text-base leading-relaxed">
               Don&apos;t throw out your broken classics — bring them to us.
               Our technicians restore consoles and discs to their former glory.
               Valerie&apos;s standards are high: if it leaves our shop, it works.
@@ -26,10 +26,10 @@ export default function ReconditioningCTA() {
 
           <div className="grid sm:grid-cols-2 gap-8 mb-10">
             {/* Console Reconditioning */}
-            <div className="bg-[#7B4EA0]/10 border border-[#7B4EA0]/30 p-6">
+            <div className="bg-[#7B4EA0]/8 border border-[#7B4EA0]/30 p-6">
               <div className="text-4xl mb-4">🔧</div>
               <h3 className="font-pixel text-sm text-[#7B4EA0] mb-3">Console Reconditioning</h3>
-              <ul className="space-y-2 text-sm text-gray-300">
+              <ul className="space-y-2 text-sm text-[#4A4458]">
                 <li className="flex items-start gap-2">
                   <span className="text-[#50C890] mt-0.5">✓</span>
                   Deep cleaning (inside &amp; out)
@@ -57,10 +57,10 @@ export default function ReconditioningCTA() {
             </div>
 
             {/* Disc Resurfacing */}
-            <div className="bg-[#48D8D0]/10 border border-[#48D8D0]/30 p-6">
+            <div className="bg-[#48D8D0]/8 border border-[#48D8D0]/30 p-6">
               <div className="text-4xl mb-4">💿</div>
-              <h3 className="font-pixel text-sm text-[#48D8D0] mb-3">Disc Resurfacing</h3>
-              <ul className="space-y-2 text-sm text-gray-300">
+              <h3 className="font-pixel text-sm text-[#2AA8A2] mb-3">Disc Resurfacing</h3>
+              <ul className="space-y-2 text-sm text-[#4A4458]">
                 <li className="flex items-start gap-2">
                   <span className="text-[#50C890] mt-0.5">✓</span>
                   Professional scratch removal
@@ -82,14 +82,14 @@ export default function ReconditioningCTA() {
                   24-48 hour turnaround
                 </li>
               </ul>
-              <div className="mt-4 font-pixel text-[8px] text-[#48D8D0]">
+              <div className="mt-4 font-pixel text-[8px] text-[#2AA8A2]">
                 PS1 · PS2 · PS3 · Wii · GameCube · DVD
               </div>
             </div>
           </div>
 
           <div className="text-center">
-            <p className="text-gray-400 text-sm mb-6">
+            <p className="text-[#4A4458] text-sm mb-6">
               Pricing varies by service complexity. Most repairs completed within 3–5 business days.
             </p>
             <a

@@ -16,13 +16,13 @@ const pressStart2P = Press_Start_2P({
 export const metadata: Metadata = {
   title: "Dream Quest Video Games | Buy & Sell Retro & Modern Games",
   description:
-    "Dream Quest Video Games — your destination for retro and modern video games, accessories, anime collectibles, console reconditioning, and disc resurfacing. Keeping Score Since '24.",
+    "Dream Quest Video Games — your destination for retro and modern video games, accessories, console reconditioning, and disc resurfacing. Keeping Score Since '24.",
   keywords:
-    "retro games, buy sell video games, used games, PS5, Xbox, Nintendo Switch, Atari, NES, SNES, N64, PS1, PS2, anime collectibles, console repair, disc resurfacing",
+    "retro games, buy sell video games, used games, PS5, Xbox, Nintendo Switch, Atari, NES, SNES, N64, PS1, PS2, console repair, disc resurfacing",
   openGraph: {
     title: "Dream Quest Video Games",
     description:
-      "Retro & modern games, accessories, anime collectibles, and console reconditioning. Keeping Score Since '24.",
+      "Retro & modern games, accessories, and console reconditioning. Keeping Score Since '24.",
     url: "https://dreamquestvideogames.com",
     siteName: "Dream Quest Video Games",
     images: [
@@ -53,7 +53,7 @@ const jsonLd = {
   "@type": "LocalBusiness",
   name: "Dream Quest Video Games",
   description:
-    "Retro and modern video game store offering buy/sell services, accessories, anime collectibles, console reconditioning, and disc resurfacing.",
+    "Retro and modern video game store offering buy/sell services, accessories, console reconditioning, and disc resurfacing.",
   image: "/logo.jpg",
   priceRange: "$$",
   telephone: "+13606202354",
