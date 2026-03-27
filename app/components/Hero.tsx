@@ -1,6 +1,40 @@
+"use client";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+
+// Store hours in Pacific Time (hour in 24h, 0-23)
+// Wednesday = closed (day index 3)
+const HOURS: Record<number, { open: number; close: number } | null> = {
+  0: { open: 11, close: 19 }, // Sunday
+  1: { open: 11, close: 19 }, // Monday
+  2: { open: 11, close: 19 }, // Tuesday
+  3: null,                     // Wednesday — closed
+  4: { open: 11, close: 19 }, // Thursday
+  5: { open: 11, close: 19 }, // Friday
+  6: { open: 11, close: 19 }, // Saturday
+};
+
+function isStoreOpen(): boolean {
+  const now = new Date(new Date().toLocaleString("en-US", { timeZone: "America/Los_Angeles" }));
+  const day = now.getDay();
+  const hour = now.getHours();
+  const minutes = now.getMinutes();
+  const timeInHours = hour + minutes / 60;
+  const todayHours = HOURS[day];
+  if (!todayHours) return false;
+  return timeInHours >= todayHours.open && timeInHours < todayHours.close;
+}
 
 export default function Hero() {
+  const [open, setOpen] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    setOpen(isStoreOpen());
+    // Re-check every minute
+    const timer = setInterval(() => setOpen(isStoreOpen()), 60000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden bg-[#FFFFFF]">
       {/* Bold gradient band at top */}
@@ -16,9 +50,21 @@ export default function Hero() {
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             {/* Text content */}
             <div className="flex-1 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 mb-6 border-2 border-[#48D8D0] bg-[#48D8D0]/12 rounded-none">
-                <span className="w-2 h-2 bg-[#50C890] rounded-full animate-pulse" />
-                <span className="font-pixel text-[8px] text-[#2AA8A2] font-bold">Now Open — Retro &amp; Modern</span>
+              <div className={`inline-flex items-center gap-2 px-3 py-1.5 mb-6 border-2 rounded-none transition-all duration-500 ${
+                open === null
+                  ? "border-gray-300 bg-gray-100"
+                  : open
+                  ? "border-[#48D8D0] bg-[#48D8D0]/12"
+                  : "border-gray-400 bg-gray-100"
+              }`}>
+                <span className={`w-2 h-2 rounded-full ${
+                  open === null ? "bg-gray-400" : open ? "bg-[#50C890] animate-pulse" : "bg-gray-400"
+                }`} />
+                <span className={`font-pixel text-[8px] font-bold ${
+                  open === null ? "text-gray-400" : open ? "text-[#2AA8A2]" : "text-gray-500"
+                }`}>
+                  {open === null ? "Loading..." : open ? "Now Open — Retro & Modern" : "Closed — Come Back Soon"}
+                </span>
               </div>
 
               <h1 className="font-pixel text-2xl sm:text-3xl lg:text-4xl leading-relaxed mb-6">
