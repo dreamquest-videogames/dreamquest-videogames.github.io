@@ -64,7 +64,7 @@ const jsonLd = {
     addressRegion: "WA",
     addressCountry: "US",
   },
-  openingHours: "Mo-Sa 10:00-20:00",
+  openingHours: ["Mo-Tu 11:00-19:00", "Th-Su 11:00-19:00"],
   sameAs: [
     "https://www.facebook.com/dreamquestpoulsbo/",
     "https://www.instagram.com/dreamquestgames/",

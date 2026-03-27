@@ -120,18 +120,20 @@ export default function Contact() {
             <div className="border border-[#7B2FBE]/30 bg-[#0D0D1A] p-6">
               <h3 className="font-pixel text-xs text-[#7B2FBE] mb-4">🕐 Store Hours</h3>
               <div className="space-y-2 text-sm">
-                <div className="flex justify-between text-gray-300">
-                  <span>Monday – Friday</span>
-                  <span className="text-white">10:00 AM – 8:00 PM</span>
-                </div>
-                <div className="flex justify-between text-gray-300">
-                  <span>Saturday</span>
-                  <span className="text-white">10:00 AM – 9:00 PM</span>
-                </div>
-                <div className="flex justify-between text-gray-300">
-                  <span>Sunday</span>
-                  <span className="text-white">12:00 PM – 6:00 PM</span>
-                </div>
+                {[
+                  { day: "Monday", hours: "11:00 AM – 7:00 PM" },
+                  { day: "Tuesday", hours: "11:00 AM – 7:00 PM" },
+                  { day: "Wednesday", hours: "Closed", closed: true },
+                  { day: "Thursday", hours: "11:00 AM – 7:00 PM" },
+                  { day: "Friday", hours: "11:00 AM – 7:00 PM" },
+                  { day: "Saturday", hours: "11:00 AM – 7:00 PM" },
+                  { day: "Sunday", hours: "11:00 AM – 7:00 PM" },
+                ].map(({ day, hours, closed }) => (
+                  <div key={day} className="flex justify-between text-gray-300">
+                    <span>{day}</span>
+                    <span className={closed ? "text-red-400" : "text-white"}>{hours}</span>
+                  </div>
+                ))}
               </div>
             </div>
 
