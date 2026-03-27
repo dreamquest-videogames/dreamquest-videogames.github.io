@@ -4,7 +4,7 @@ export default function Footer() {
   const currentYear = 2024;
 
   return (
-    <footer className="bg-[#050510] border-t border-[#7B4EA0]/30 py-12 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-[#1A1020] border-t-2 border-[#7B4EA0] py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
           {/* Brand */}
