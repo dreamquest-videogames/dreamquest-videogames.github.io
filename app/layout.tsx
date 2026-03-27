@@ -67,7 +67,7 @@ const jsonLd = {
   openingHours: "Mo-Sa 10:00-20:00",
   sameAs: [
     "https://www.facebook.com/dreamquestpoulsbo/",
-    "https://instagram.com/dreamquestvideogames",
+    "https://www.instagram.com/dreamquestgames/",
     "https://twitter.com/dreamquestgames",
   ],
 };

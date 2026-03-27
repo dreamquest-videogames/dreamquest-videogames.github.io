@@ -159,7 +159,7 @@ export default function Contact() {
               <h3 className="font-pixel text-xs text-[#4CAF50] mb-4">🌐 Follow Us</h3>
               <div className="flex flex-wrap gap-3">
                 {[
-                  { name: "Instagram", handle: "@dreamquestvideogames", icon: "📸", url: "https://www.instagram.com/dreamquestvideogames/" },
+                  { name: "Instagram", handle: "@dreamquestgames", icon: "📸", url: "https://www.instagram.com/dreamquestgames/" },
                   { name: "Facebook", handle: "dreamquestpoulsbo", icon: "📘", url: "https://www.facebook.com/dreamquestpoulsbo/" },
                   { name: "Twitter/X", handle: "@dreamquestgames", icon: "🐦", url: "https://twitter.com/dreamquestgames" },
                   { name: "TikTok", handle: "@dreamquestvg", icon: "🎵", url: "https://www.tiktok.com/@dreamquestvg" },
