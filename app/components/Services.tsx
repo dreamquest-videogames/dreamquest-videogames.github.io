@@ -72,14 +72,15 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Services grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 [&>*:last-child:nth-child(3n+1)]:lg:col-start-2">
+        {/* Services grid — 3 cols, last orphan centered */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
           {services.map((service, idx) => {
             const styles = cardStyleMap[service.color as keyof typeof cardStyleMap];
+            const isOrphan = services.length % 3 === 1 && idx === services.length - 1;
             return (
               <div
                 key={idx}
-                className={`bg-white ${styles.border} ${styles.shadow} p-6 card-hover transition-all duration-300`}
+                className={`bg-white ${styles.border} ${styles.shadow} p-6 card-hover transition-all duration-300${isOrphan ? " lg:col-start-2" : ""}`}
               >
                 {/* Icon */}
                 <div className={`inline-flex items-center justify-center w-14 h-14 text-2xl mb-4 ${styles.icon}`}>
@@ -101,20 +102,20 @@ export default function Services() {
               </div>
             );
           })}
+        </div>
 
-          {/* Valerie Guarantee — full-width */}
-          <div className="bg-white border-l-4 border-l-[#50C890] shadow-[0_4px_20px_rgba(80,200,144,0.2)] p-6 card-hover md:col-span-2 lg:col-span-3">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <div className="text-4xl">⚔️</div>
-              <div>
-                <h3 className="font-pixel text-sm text-[#3A9A70] glow-green mb-2 font-bold">
-                  The Valerie Guarantee
-                </h3>
-                <p className="text-[#4A4458] text-sm">
-                  Every game we sell is tested and verified before hitting our shelves. Valerie doesn&apos;t let bad deals pass through —
-                  if a game doesn&apos;t work, we make it right. No questions asked.
-                </p>
-              </div>
+        {/* Valerie Guarantee — full-width */}
+        <div className="bg-white border-l-4 border-l-[#50C890] shadow-[0_4px_20px_rgba(80,200,144,0.2)] p-6 card-hover">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <div className="text-4xl">⚔️</div>
+            <div>
+              <h3 className="font-pixel text-sm text-[#3A9A70] glow-green mb-2 font-bold">
+                The Valerie Guarantee
+              </h3>
+              <p className="text-[#4A4458] text-sm">
+                Every game we sell is tested and verified before hitting our shelves. Valerie doesn&apos;t let bad deals pass through —
+                if a game doesn&apos;t work, we make it right. No questions asked.
+              </p>
             </div>
           </div>
         </div>
