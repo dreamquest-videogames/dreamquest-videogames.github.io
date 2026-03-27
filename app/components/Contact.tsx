@@ -159,21 +159,24 @@ export default function Contact() {
               <h3 className="font-pixel text-xs text-[#4CAF50] mb-4">🌐 Follow Us</h3>
               <div className="flex flex-wrap gap-3">
                 {[
-                  { name: "Instagram", handle: "@dreamquestvideogames", icon: "📸" },
-                  { name: "Facebook", handle: "Dream Quest Video Games", icon: "📘" },
-                  { name: "Twitter/X", handle: "@dreamquestgames", icon: "🐦" },
-                  { name: "TikTok", handle: "@dreamquestvg", icon: "🎵" },
+                  { name: "Instagram", handle: "@dreamquestvideogames", icon: "📸", url: "https://www.instagram.com/dreamquestvideogames/" },
+                  { name: "Facebook", handle: "dreamquestpoulsbo", icon: "📘", url: "https://www.facebook.com/dreamquestpoulsbo/" },
+                  { name: "Twitter/X", handle: "@dreamquestgames", icon: "🐦", url: "https://twitter.com/dreamquestgames" },
+                  { name: "TikTok", handle: "@dreamquestvg", icon: "🎵", url: "https://www.tiktok.com/@dreamquestvg" },
                 ].map((social) => (
-                  <div
+                  <a
                     key={social.name}
-                    className="flex items-center gap-2 bg-[#080810] border border-[#4CAF50]/20 px-3 py-2 text-xs"
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 bg-[#080810] border border-[#4CAF50]/20 hover:border-[#4CAF50]/60 px-3 py-2 text-xs transition-colors"
                   >
                     <span>{social.icon}</span>
                     <div>
                       <div className="text-white font-medium">{social.name}</div>
                       <div className="text-gray-500 text-[10px]">{social.handle}</div>
                     </div>
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
