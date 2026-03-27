@@ -57,7 +57,6 @@ export default function ReconditioningCTA() {
                 "Disc polishing & buffing",
                 "Read verification after service",
                 "Bulk orders welcome",
-                "24-48 hour turnaround",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2">
                   <span className="text-[#50C890] mt-0.5 font-bold">✓</span>
