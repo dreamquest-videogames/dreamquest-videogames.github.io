@@ -16,14 +16,6 @@ const services = [
     color: "teal",
   },
   {
-    icon: "⛩️",
-    title: "Anime Collectibles",
-    description:
-      "High-quality anime statues, figures, and collectibles from your favorite franchises. From Dragon Ball Z to Demon Slayer — curated pieces for serious collectors.",
-    highlight: "Premium figures & statues",
-    color: "green",
-  },
-  {
     icon: "🔧",
     title: "Console Reconditioning",
     description:
