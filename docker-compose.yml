@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  dreamquest:
+    build: .
+    ports:
+      - "8420:3000"
+    restart: unless-stopped
