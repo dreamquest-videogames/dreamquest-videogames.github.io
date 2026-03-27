@@ -4,7 +4,7 @@ backend:
   branch: main
   # OAuth proxy — deploy via https://github.com/sveltia/sveltia-cms-auth (free Cloudflare Worker)
   # Once deployed, replace the placeholder below with your worker URL:
-  base_url: https://YOUR-WORKER.YOUR-SUBDOMAIN.workers.dev
+  base_url: https://dreamquest.da-gopherboy.workers.dev
   auth_endpoint: /callback
 
 # Uncomment to enable draft/review workflow (requires GitHub Pro or public repo):
