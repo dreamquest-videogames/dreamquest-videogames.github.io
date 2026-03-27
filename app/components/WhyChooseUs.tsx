@@ -1,59 +1,4 @@
-const trustSignals = [
-  {
-    icon: "🛡️",
-    title: "Every Game Tested",
-    description:
-      "We test every single game before it hits our shelves. No mystery cartridges. No disc roulette. What you buy works — period.",
-    stat: "100%",
-    statLabel: "Tested Before Sale",
-    color: "purple",
-  },
-  {
-    icon: "⚔️",
-    title: "Fair Trade-In Prices",
-    description:
-      "Valerie doesn't let bad deals through. We offer competitive prices for your trade-ins — check our current rates or bring in your collection for a free quote.",
-    stat: "Fair",
-    statLabel: "Trade-In Values",
-    color: "teal",
-  },
-  {
-    icon: "🎯",
-    title: "Passion-Driven",
-    description:
-      "We're gamers first, store owners second. Our team plays everything from Atari to modern-day. That passion shows in how we curate inventory and serve every customer.",
-    stat: "40+",
-    statLabel: "Years of Gaming History",
-    color: "green",
-  },
-  {
-    icon: "🔄",
-    title: "Satisfaction Guarantee",
-    description:
-      "Not happy with your purchase? Bring it back. We stand behind everything we sell. Valerie's reputation is on the line with every transaction.",
-    stat: "100%",
-    statLabel: "Satisfaction Guaranteed",
-    color: "purple",
-  },
-  {
-    icon: "📦",
-    title: "Massive Selection",
-    description:
-      "From Atari 2600 to PS5, we carry hundreds of titles across all eras. Rare finds, budget grabs, and everything in between — one store, one roof.",
-    stat: "500+",
-    statLabel: "Titles in Stock",
-    color: "teal",
-  },
-  {
-    icon: "🤝",
-    title: "Community First",
-    description:
-      "Dream Quest isn't a faceless chain — we're a local store built by gamers for gamers. We know our customers' names, not just their loyalty card numbers.",
-    stat: "Local",
-    statLabel: "Community Store",
-    color: "green",
-  },
-];
+import content from "../../public/content.json";
 
 const colorMap = {
   purple: {
@@ -77,41 +22,44 @@ const colorMap = {
 };
 
 export default function WhyChooseUs() {
+  const w = content.whyUs;
+
   return (
     <section
       id="about"
       className="py-20 px-4 sm:px-6 lg:px-8 section-divider"
-      style={{ background: 'var(--bg-secondary)' }}
+      style={{ background: "var(--bg-secondary)" }}
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
-            <span className="font-pixel text-[10px] text-[#7B4EA0] font-bold">// WHY DREAM QUEST</span>
+            <span className="font-pixel text-[10px] text-[#7B4EA0] font-bold">{w.sectionLabel}</span>
           </div>
-          <h2 className="font-pixel text-xl sm:text-2xl mb-4 font-bold" style={{ color: 'var(--text-primary)' }}>
+          <h2
+            className="font-pixel text-xl sm:text-2xl mb-4 font-bold"
+            style={{ color: "var(--text-primary)" }}
+          >
             Why Choose <span className="text-[#2AA8A2] glow-teal">Us</span>
           </h2>
-          <p className="max-w-2xl mx-auto text-base" style={{ color: 'var(--text-secondary)' }}>
-            In a world of online marketplaces and big-box retailers, Dream Quest is something different.
-            A place where games are respected, history is preserved, and every customer matters.
+          <p className="max-w-2xl mx-auto text-base" style={{ color: "var(--text-secondary)" }}>
+            {w.subheading}
           </p>
         </div>
 
         {/* Trust signals grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {trustSignals.map((signal, idx) => {
-            const colors = colorMap[signal.color as keyof typeof colorMap];
+          {w.trustPoints.map((signal, idx) => {
+            const colors = colorMap[signal.color as keyof typeof colorMap] ?? colorMap.purple;
             return (
               <div
                 key={idx}
                 className={`${colors.cardBorder} p-6 card-hover transition-all duration-300`}
                 style={{
-                  background: 'var(--bg-card)',
-                  boxShadow: 'var(--card-shadow)',
+                  background: "var(--bg-card)",
+                  boxShadow: "var(--card-shadow)",
                 }}
               >
-                {/* Icon + stat row */}
                 <div className="flex items-start justify-between mb-4">
                   <div className={`w-12 h-12 flex items-center justify-center text-2xl rounded-sm ${colors.icon}`}>
                     {signal.icon}
@@ -121,9 +69,15 @@ export default function WhyChooseUs() {
                     <div className={`font-pixel text-[7px] ${colors.label}`}>{signal.statLabel}</div>
                   </div>
                 </div>
-
-                <h3 className="font-pixel text-xs mb-3 font-bold" style={{ color: 'var(--text-primary)' }}>{signal.title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{signal.description}</p>
+                <h3
+                  className="font-pixel text-xs mb-3 font-bold"
+                  style={{ color: "var(--text-primary)" }}
+                >
+                  {signal.title}
+                </h3>
+                <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                  {signal.description}
+                </p>
               </div>
             );
           })}
@@ -132,26 +86,29 @@ export default function WhyChooseUs() {
         {/* Valerie lore section */}
         <div
           className="border-l-4 border-l-[#7B4EA0] shadow-[0_4px_20px_rgba(123,78,160,0.18)] p-8 sm:p-10"
-          style={{ background: 'var(--bg-card)' }}
+          style={{ background: "var(--bg-card)" }}
         >
           <div className="max-w-3xl mx-auto text-center">
-            <div className="font-pixel text-[10px] text-[#7B4EA0] mb-4 font-bold">⚔️ THE LEGEND OF VALERIE ⚔️</div>
-            <h3 className="font-pixel text-base mb-4 font-bold" style={{ color: 'var(--text-primary)' }}>
-              Our Mascot Has a Story
+            <div className="font-pixel text-[10px] text-[#7B4EA0] mb-4 font-bold">
+              ⚔️ THE LEGEND OF VALERIE ⚔️
+            </div>
+            <h3
+              className="font-pixel text-base mb-4 font-bold"
+              style={{ color: "var(--text-primary)" }}
+            >
+              {w.mascotStory.subheading}
             </h3>
-            <p className="text-sm leading-relaxed mb-4" style={{ color: 'var(--text-secondary)' }}>
-              Valerie the Viking didn&apos;t choose the quest — the quest chose her.
-              A warrior of pixels and persistence, she once roamed the digital realms
-              from Atari dungeons to PS5 boss battles. She&apos;s seen every era,
-              fought every final boss, and traded in every game imaginable.
-            </p>
-            <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              Now she guards the Dream Quest vault, ensuring every game that passes
-              through her hands is worthy of a new player&apos;s shelf. She&apos;s the reason
-              we don&apos;t sell junk. She won&apos;t allow it.
-            </p>
+            {w.mascotStory.paragraphs.map((para, idx) => (
+              <p
+                key={idx}
+                className="text-sm leading-relaxed mb-4"
+                style={{ color: "var(--text-secondary)" }}
+              >
+                {para}
+              </p>
+            ))}
             <div className="mt-6 font-pixel text-[8px] text-[#50C890] glow-green">
-              &quot;Every cartridge tells a story. Make sure it&apos;s a good one.&quot; — Valerie
+              {w.mascotStory.quote}
             </div>
           </div>
         </div>

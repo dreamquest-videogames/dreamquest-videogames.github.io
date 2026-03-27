@@ -1,0 +1,246 @@
+{
+  "businessName": "Dream Quest Video Games",
+  "tagline": "Keeping Score Since '24",
+  "mascot": "Valerie the Viking",
+  "phone": "(360) 620-2354",
+  "phoneLink": "+13606202354",
+  "email": "contact.dreamquest@gmail.com",
+  "address": {
+    "street": "19425 7th Ave. NE Suite 117",
+    "city": "Poulsbo",
+    "state": "WA"
+  },
+
+  "hours": [
+    { "day": "Monday",    "time": "11:00 AM – 7:00 PM" },
+    { "day": "Tuesday",   "time": "11:00 AM – 7:00 PM" },
+    { "day": "Wednesday", "time": "Closed" },
+    { "day": "Thursday",  "time": "11:00 AM – 7:00 PM" },
+    { "day": "Friday",    "time": "11:00 AM – 7:00 PM" },
+    { "day": "Saturday",  "time": "11:00 AM – 7:00 PM" },
+    { "day": "Sunday",    "time": "11:00 AM – 7:00 PM" }
+  ],
+
+  "hero": {
+    "badge": "Now Open — Retro & Modern",
+    "badgeClosed": "Closed — Come Back Soon",
+    "headline1": "Dream Quest",
+    "headline2": "Video Games",
+    "tagline": "\"Keeping Score Since '24\"",
+    "description": "Your ultimate destination for retro classics and modern hits. Buy, sell, and trade games spanning every era — from dusty Atari cartridges to the latest PS5 titles.",
+    "mascotLine": "⚔️ Guarded by Valerie the Viking — our warrior mascot who battles bad deals so you don't have to.",
+    "ctaPrimary": "Explore Services",
+    "ctaSecondary": "Sell Your Games",
+    "badgeRetro": "RETRO",
+    "badgeModern": "MODERN",
+    "mascotLabel": "⚔ Valerie the Viking",
+    "trustBadges": [
+      "Atari to PS5",
+      "All Games Tested",
+      "Fair Prices Guaranteed"
+    ]
+  },
+
+  "services": {
+    "sectionLabel": "// WHAT WE DO",
+    "heading": "Our Services",
+    "subheading": "From trade-ins to restoration — Valerie the Viking keeps watch over every transaction. Here's everything we offer under one roof.",
+    "items": [
+      {
+        "icon": "🎮",
+        "title": "Buy & Sell Games",
+        "description": "Trade in your old games for cash or store credit. We buy and sell titles from every era — Atari, NES, SNES, N64, PS1, PS2, GameBoy, Wii, Xbox, PS4/5, Switch, and everything in between.",
+        "highlight": "Atari → PS5 / Series X / Switch",
+        "color": "purple"
+      },
+      {
+        "icon": "🕹️",
+        "title": "Gaming Accessories",
+        "description": "Controllers, cables, memory cards, headsets, adapters, and more. We stock accessories for vintage and modern consoles. Rare finds and everyday essentials in one place.",
+        "highlight": "Vintage to next-gen gear",
+        "color": "teal"
+      },
+      {
+        "icon": "🔧",
+        "title": "Console Reconditioning",
+        "description": "Breathe new life into your old consoles. We clean, repair, and recondition everything from vintage units to finicky disc drives. Get it working like the day it was made.",
+        "highlight": "All eras repaired & restored",
+        "color": "purple"
+      },
+      {
+        "icon": "💿",
+        "title": "Disc Resurfacing",
+        "description": "Scratched discs killing your save file? Our professional disc resurfacing service removes scratches and restores readability. We handle PS1, PS2, PS3, Wii, DVD, and more.",
+        "highlight": "Professional scratch removal",
+        "color": "teal"
+      }
+    ],
+    "guarantee": {
+      "icon": "⚔️",
+      "title": "The Valerie Guarantee",
+      "description": "Every game we sell is tested and verified before hitting our shelves. Valerie doesn't let bad deals pass through — if a game doesn't work, we make it right. No questions asked."
+    }
+  },
+
+  "reconditioning": {
+    "sectionLabel": "// REPAIR & RESTORE",
+    "heading": "Console Reconditioning & Disc Resurfacing",
+    "subheading": "Don't throw out your broken classics — bring them to us. Our technicians restore consoles and discs to their former glory. Valerie's standards are high: if it leaves our shop, it works.",
+    "console": {
+      "title": "Console Reconditioning",
+      "description": "From a dusty N64 to a scratchy PS2 disc drive — we clean, repair, and restore your consoles to working condition.",
+      "features": [
+        "Full internal cleaning",
+        "Capacitor replacement (older consoles)",
+        "Disc drive repair & calibration",
+        "Controller port repair",
+        "Power supply testing"
+      ],
+      "footnote": "NES · SNES · N64 · PS1 · PS2 · GameCube · Wii and more"
+    },
+    "disc": {
+      "title": "Disc Resurfacing",
+      "description": "Don't throw away a game because of scratches. Our resurfacing machine removes surface damage and restores readability on most discs.",
+      "features": [
+        "PS1, PS2, PS3 compatible",
+        "GameCube & Wii discs",
+        "DVD & CD media",
+        "Most discs restored in one pass"
+      ],
+      "footnote": "PS1 · PS2 · PS3 · Wii · GameCube · DVD"
+    },
+    "pricingNote": "Pricing varies by service complexity. Most repairs completed within 3–5 business days.",
+    "cta": "Get a Quote →"
+  },
+
+  "whyUs": {
+    "sectionLabel": "// WHY DREAM QUEST",
+    "heading": "Why Choose Us",
+    "subheading": "In a world of online marketplaces and big-box retailers, Dream Quest is something different. A place where games are respected, history is preserved, and every customer matters.",
+    "trustPoints": [
+      {
+        "icon": "🛡️",
+        "title": "Every Game Tested",
+        "description": "We test every single game before it hits our shelves. No mystery cartridges. No disc roulette. What you buy works — period.",
+        "stat": "100%",
+        "statLabel": "Tested Before Sale",
+        "color": "purple"
+      },
+      {
+        "icon": "⚔️",
+        "title": "Fair Trade-In Prices",
+        "description": "Valerie doesn't let bad deals through. We offer competitive prices for your trade-ins — check our current rates or bring in your collection for a free quote.",
+        "stat": "Fair",
+        "statLabel": "Trade-In Values",
+        "color": "teal"
+      },
+      {
+        "icon": "🎯",
+        "title": "Passion-Driven",
+        "description": "We're gamers first, store owners second. Our team plays everything from Atari to modern-day. That passion shows in how we curate inventory and serve every customer.",
+        "stat": "40+",
+        "statLabel": "Years of Gaming History",
+        "color": "green"
+      },
+      {
+        "icon": "🔄",
+        "title": "Satisfaction Guarantee",
+        "description": "Not happy with your purchase? Bring it back. We stand behind everything we sell. Valerie's reputation is on the line with every transaction.",
+        "stat": "100%",
+        "statLabel": "Satisfaction Guaranteed",
+        "color": "purple"
+      },
+      {
+        "icon": "📦",
+        "title": "Massive Selection",
+        "description": "From Atari 2600 to PS5, we carry hundreds of titles across all eras. Rare finds, budget grabs, and everything in between — one store, one roof.",
+        "stat": "500+",
+        "statLabel": "Titles in Stock",
+        "color": "teal"
+      },
+      {
+        "icon": "🤝",
+        "title": "Community First",
+        "description": "Dream Quest isn't a faceless chain — we're a local store built by gamers for gamers. We know our customers' names, not just their loyalty card numbers.",
+        "stat": "Local",
+        "statLabel": "Community Store",
+        "color": "green"
+      }
+    ],
+    "mascotStory": {
+      "heading": "The Legend of Valerie the Viking",
+      "subheading": "Our Mascot Has a Story",
+      "quote": "\"Every cartridge tells a story. Make sure it's a good one.\" — Valerie",
+      "paragraphs": [
+        "Valerie the Viking didn't choose the quest — the quest chose her. A warrior of pixels and persistence, she once roamed the digital realms from Atari dungeons to PS5 boss battles. She's seen every era, fought every final boss, and traded in every game imaginable.",
+        "Now she guards the Dream Quest vault, ensuring every game that passes through her hands is worthy of a new player's shelf. She's the reason we don't sell junk. She won't allow it."
+      ]
+    }
+  },
+
+  "contact": {
+    "sectionLabel": "// GET IN TOUCH",
+    "heading": "Contact Us",
+    "subheading": "Have a question about our inventory? Want to sell your collection? Need a repair quote? Drop us a message and we'll get back to you.",
+    "form": {
+      "namePlaceholder": "Player One",
+      "emailPlaceholder": "player@example.com",
+      "subjects": [
+        { "value": "buy",    "label": "Buy Games / Check Availability" },
+        { "value": "sell",   "label": "Sell My Games / Trade-In" },
+        { "value": "repair", "label": "Console Repair Quote" },
+        { "value": "disc",   "label": "Disc Resurfacing" },
+        { "value": "other",  "label": "Other Question" }
+      ],
+      "messagePlaceholder": "Tell us what you're looking for, what you want to sell, or what needs repair...",
+      "submitLabel": "Send Message →",
+      "successIcon": "⚔️",
+      "successHeading": "Message Received!",
+      "successMessage": "Valerie has your message. We'll get back to you within 24 hours."
+    },
+    "hoursLabel": "🕐 Store Hours",
+    "quickActionsLabel": "⚡ Quick Actions",
+    "socialsLabel": "🌐 Follow Us"
+  },
+
+  "social": {
+    "instagram": {
+      "url": "https://www.instagram.com/dreamquestgames/",
+      "handle": "@dreamquestgames"
+    },
+    "facebook": {
+      "url": "https://www.facebook.com/dreamquestpoulsbo/",
+      "handle": "dreamquestpoulsbo"
+    },
+    "bluesky": {
+      "url": "https://bsky.app/profile/dreamquestgames.bsky.social",
+      "handle": "@dreamquestgames.bsky.social"
+    }
+  },
+
+  "footer": {
+    "description": "Your local destination for retro and modern video games, accessories, and console restoration services.",
+    "tagline": "\"Keeping Score Since '24\"",
+    "exploreLabel": "EXPLORE",
+    "servicesLabel": "SERVICES",
+    "copyright": "⚔️ Guarded by Valerie the Viking © 2024 Dream Quest Video Games",
+    "exploreLinks": [
+      { "href": "#services",  "label": "Our Services" },
+      { "href": "#inventory", "label": "Featured Inventory" },
+      { "href": "#about",     "label": "About Us" },
+      { "href": "#contact",   "label": "Contact" }
+    ],
+    "serviceLinks": [
+      "Buy & Sell Games",
+      "Gaming Accessories",
+      "Console Reconditioning",
+      "Disc Resurfacing"
+    ]
+  },
+
+  "seo": {
+    "title": "Dream Quest Video Games | Buy & Sell Retro & Modern Games",
+    "description": "Dream Quest Video Games — your destination for retro and modern video games, accessories, console reconditioning, and disc resurfacing. Keeping Score Since '24.",
+    "ogDescription": "Retro & modern games, accessories, and console reconditioning. Keeping Score Since '24."
+  }
+}

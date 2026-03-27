@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Press_Start_2P } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./context/ThemeContext";
+import content from "../public/content.json";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -15,23 +16,21 @@ const pressStart2P = Press_Start_2P({
 });
 
 export const metadata: Metadata = {
-  title: "Dream Quest Video Games | Buy & Sell Retro & Modern Games",
-  description:
-    "Dream Quest Video Games — your destination for retro and modern video games, accessories, console reconditioning, and disc resurfacing. Keeping Score Since '24.",
+  title: content.seo.title,
+  description: content.seo.description,
   keywords:
     "retro games, buy sell video games, used games, PS5, Xbox, Nintendo Switch, Atari, NES, SNES, N64, PS1, PS2, console repair, disc resurfacing",
   openGraph: {
-    title: "Dream Quest Video Games",
-    description:
-      "Retro & modern games, accessories, and console reconditioning. Keeping Score Since '24.",
+    title: content.businessName,
+    description: content.seo.ogDescription,
     url: "https://dreamquestvideogames.com",
-    siteName: "Dream Quest Video Games",
+    siteName: content.businessName,
     images: [
       {
         url: "/logo.jpg",
         width: 800,
         height: 600,
-        alt: "Dream Quest Video Games — Valerie the Viking",
+        alt: `${content.businessName} — ${content.mascot}`,
       },
     ],
     locale: "en_US",
@@ -39,8 +38,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dream Quest Video Games",
-    description: "Retro & modern games. Keeping Score Since '24.",
+    title: content.businessName,
+    description: content.seo.ogDescription,
     images: ["/logo.jpg"],
   },
   icons: {
@@ -52,24 +51,24 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Dream Quest Video Games",
+  name: content.businessName,
   description:
     "Retro and modern video game store offering buy/sell services, accessories, console reconditioning, and disc resurfacing.",
   image: "/logo.jpg",
   priceRange: "$$",
-  telephone: "+13606202354",
+  telephone: content.phoneLink,
   address: {
     "@type": "PostalAddress",
-    streetAddress: "19425 7th Ave. NE Suite 117",
-    addressLocality: "Poulsbo",
-    addressRegion: "WA",
+    streetAddress: content.address.street,
+    addressLocality: content.address.city,
+    addressRegion: content.address.state,
     addressCountry: "US",
   },
   openingHours: ["Mo-Tu 11:00-19:00", "Th-Su 11:00-19:00"],
   sameAs: [
-    "https://www.facebook.com/dreamquestpoulsbo/",
-    "https://www.instagram.com/dreamquestgames/",
-    "https://bsky.app/profile/dreamquestgames.bsky.social",
+    content.social.facebook.url,
+    content.social.instagram.url,
+    content.social.bluesky.url,
   ],
 };
 
@@ -88,7 +87,7 @@ export default function RootLayout({
       </head>
       <body
         className={`${inter.variable} ${pressStart2P.variable} antialiased`}
-        style={{ background: 'var(--bg-primary)', color: 'var(--text-primary)' }}
+        style={{ background: "var(--bg-primary)", color: "var(--text-primary)" }}
       >
         <ThemeProvider>{children}</ThemeProvider>
       </body>

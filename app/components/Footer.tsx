@@ -1,7 +1,8 @@
 import Image from "next/image";
+import content from "../../public/content.json";
 
 export default function Footer() {
-  const currentYear = 2024;
+  const f = content.footer;
 
   return (
     <footer className="bg-[#1A1020] border-t-2 border-[#7B4EA0] py-12 px-4 sm:px-6 lg:px-8">
@@ -13,7 +14,7 @@ export default function Footer() {
               <div className="relative w-12 h-12 border border-[#7B4EA0]/60 overflow-hidden">
                 <Image
                   src="/logo.jpg"
-                  alt="Dream Quest Video Games"
+                  alt={content.businessName}
                   fill
                   className="object-cover"
                 />
@@ -24,29 +25,20 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-4 max-w-xs">
-              Your local destination for retro and modern video games, accessories,
-              and console restoration services.
+              {f.description}
             </p>
             <div className="font-pixel text-[9px] text-[#50C890] glow-green">
-              &quot;Keeping Score Since &apos;24&quot;
+              {f.tagline}
             </div>
           </div>
 
-          {/* Links */}
+          {/* Explore links */}
           <div>
-            <h4 className="font-pixel text-[9px] text-[#7B4EA0] mb-4">EXPLORE</h4>
+            <h4 className="font-pixel text-[9px] text-[#7B4EA0] mb-4">{f.exploreLabel}</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              {[
-                { href: "#services", label: "Our Services" },
-                { href: "#inventory", label: "Featured Inventory" },
-                { href: "#about", label: "About Us" },
-                { href: "#contact", label: "Contact" },
-              ].map((link) => (
+              {f.exploreLinks.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="hover:text-[#48D8D0] transition-colors"
-                  >
+                  <a href={link.href} className="hover:text-[#48D8D0] transition-colors">
                     {link.label}
                   </a>
                 </li>
@@ -54,21 +46,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Service links */}
           <div>
-            <h4 className="font-pixel text-[9px] text-[#48D8D0] mb-4">SERVICES</h4>
+            <h4 className="font-pixel text-[9px] text-[#48D8D0] mb-4">{f.servicesLabel}</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              {[
-                "Buy & Sell Games",
-                "Gaming Accessories",
-                "Console Reconditioning",
-                "Disc Resurfacing",
-              ].map((service) => (
+              {f.serviceLinks.map((service) => (
                 <li key={service}>
-                  <a
-                    href="#services"
-                    className="hover:text-[#48D8D0] transition-colors"
-                  >
+                  <a href="#services" className="hover:text-[#48D8D0] transition-colors">
                     {service}
                   </a>
                 </li>
@@ -80,7 +64,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-[#7B4EA0]/20 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="font-pixel text-[8px] text-[#50C890] glow-green text-center sm:text-left">
-            ⚔️ Guarded by Valerie the Viking © {currentYear} Dream Quest Video Games
+            {f.copyright}
           </div>
           <div className="flex gap-6 text-xs text-gray-500">
             <a href="#" className="hover:text-gray-300 transition-colors">Privacy Policy</a>

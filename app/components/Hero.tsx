@@ -1,36 +1,45 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import content from "../../public/content.json";
 
-// Store hours in Pacific Time (hour in 24h, 0-23)
-// Wednesday = closed (day index 3)
-const HOURS: Record<number, { open: number; close: number } | null> = {
-  0: { open: 11, close: 19 }, // Sunday
-  1: { open: 11, close: 19 }, // Monday
-  2: { open: 11, close: 19 }, // Tuesday
-  3: null,                     // Wednesday — closed
-  4: { open: 11, close: 19 }, // Thursday
-  5: { open: 11, close: 19 }, // Friday
-  6: { open: 11, close: 19 }, // Saturday
-};
+// Build open/close schedule from content.json hours
+// "Closed" entries map to null; others parse "HH:MM AM/PM" → 24h integers
+function parseHour(timeStr: string): number {
+  const match = timeStr.match(/(\d+):(\d+)\s*(AM|PM)/i);
+  if (!match) return 0;
+  let h = parseInt(match[1], 10);
+  const m = parseInt(match[2], 10);
+  const meridiem = match[3].toUpperCase();
+  if (meridiem === "PM" && h !== 12) h += 12;
+  if (meridiem === "AM" && h === 12) h = 0;
+  return h + m / 60;
+}
+
+// content.json hours are Mon–Sun (index 0 = Monday in our array).
+// JS getDay(): 0=Sun,1=Mon,...,6=Sat — remap to our array index.
+const DAY_ORDER = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 function isStoreOpen(): boolean {
   const now = new Date(new Date().toLocaleString("en-US", { timeZone: "America/Los_Angeles" }));
-  const day = now.getDay();
-  const hour = now.getHours();
-  const minutes = now.getMinutes();
-  const timeInHours = hour + minutes / 60;
-  const todayHours = HOURS[day];
-  if (!todayHours) return false;
-  return timeInHours >= todayHours.open && timeInHours < todayHours.close;
+  const dayName = DAY_ORDER[now.getDay()];
+  const entry = content.hours.find((h) => h.day === dayName);
+  if (!entry || entry.time === "Closed") return false;
+  // Expect format like "11:00 AM – 7:00 PM"
+  const parts = entry.time.split("–").map((s) => s.trim());
+  if (parts.length < 2) return false;
+  const open = parseHour(parts[0]);
+  const close = parseHour(parts[1]);
+  const timeNow = now.getHours() + now.getMinutes() / 60;
+  return timeNow >= open && timeNow < close;
 }
 
 export default function Hero() {
   const [open, setOpen] = useState<boolean | null>(null);
+  const h = content.hero;
 
   useEffect(() => {
     setOpen(isStoreOpen());
-    // Re-check every minute
     const timer = setInterval(() => setOpen(isStoreOpen()), 60000);
     return () => clearInterval(timer);
   }, []);
@@ -38,7 +47,7 @@ export default function Hero() {
   return (
     <section
       className="relative min-h-screen flex flex-col overflow-hidden"
-      style={{ background: 'var(--bg-primary)' }}
+      style={{ background: "var(--bg-primary)" }}
     >
       {/* Bold gradient band at top */}
       <div className="h-1.5 w-full bg-gradient-to-r from-[#7B4EA0] via-[#48D8D0] to-[#50C890] flex-shrink-0" />
@@ -53,72 +62,71 @@ export default function Hero() {
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             {/* Text content */}
             <div className="flex-1 text-center lg:text-left">
-              <div className={`inline-flex items-center gap-2 px-3 py-1.5 mb-6 border-2 rounded-none transition-all duration-500 ${
-                open === null
-                  ? "border-gray-300 bg-gray-100"
-                  : open
-                  ? "border-[#48D8D0] bg-[#48D8D0]/12"
-                  : "border-gray-400 bg-gray-100"
-              }`}>
-                <span className={`w-2 h-2 rounded-full ${
-                  open === null ? "bg-gray-400" : open ? "bg-[#50C890] animate-pulse" : "bg-gray-400"
-                }`} />
-                <span className={`font-pixel text-[8px] font-bold ${
-                  open === null ? "text-gray-400" : open ? "text-[#2AA8A2]" : "text-gray-500"
-                }`}>
-                  {open === null ? "Loading..." : open ? "Now Open — Retro & Modern" : "Closed — Come Back Soon"}
+              <div
+                className={`inline-flex items-center gap-2 px-3 py-1.5 mb-6 border-2 rounded-none transition-all duration-500 ${
+                  open === null
+                    ? "border-gray-300 bg-gray-100"
+                    : open
+                    ? "border-[#48D8D0] bg-[#48D8D0]/12"
+                    : "border-gray-400 bg-gray-100"
+                }`}
+              >
+                <span
+                  className={`w-2 h-2 rounded-full ${
+                    open === null ? "bg-gray-400" : open ? "bg-[#50C890] animate-pulse" : "bg-gray-400"
+                  }`}
+                />
+                <span
+                  className={`font-pixel text-[8px] font-bold ${
+                    open === null ? "text-gray-400" : open ? "text-[#2AA8A2]" : "text-gray-500"
+                  }`}
+                >
+                  {open === null ? "Loading..." : open ? h.badge : h.badgeClosed}
                 </span>
               </div>
 
               <h1 className="font-pixel text-2xl sm:text-3xl lg:text-4xl leading-relaxed mb-6">
-                <span style={{ color: 'var(--text-primary)' }}>Dream Quest</span>
+                <span style={{ color: "var(--text-primary)" }}>{h.headline1}</span>
                 <br />
-                <span className="text-[#7B4EA0] glow-purple">Video Games</span>
+                <span className="text-[#7B4EA0] glow-purple">{h.headline2}</span>
               </h1>
 
               <p className="font-pixel text-sm sm:text-base text-[#2AA8A2] glow-teal mb-4">
-                &quot;Keeping Score Since &apos;24&quot;
+                {h.tagline}
               </p>
 
-              <p className="text-lg leading-relaxed mb-4 max-w-xl" style={{ color: 'var(--text-secondary)' }}>
-                Your ultimate destination for retro classics and modern hits.
-                Buy, sell, and trade games spanning every era — from dusty Atari
-                cartridges to the latest PS5 titles.
+              <p className="text-lg leading-relaxed mb-4 max-w-xl" style={{ color: "var(--text-secondary)" }}>
+                {h.description}
               </p>
 
-              <p className="text-[#3A9A70] font-semibold mb-8">
-                ⚔️ Guarded by <strong>Valerie the Viking</strong> — our warrior mascot who battles bad deals so you don&apos;t have to.
-              </p>
+              <p className="text-[#3A9A70] font-semibold mb-8">{h.mascotLine}</p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a
                   href="#services"
                   className="inline-flex items-center justify-center px-10 py-4 font-pixel text-xs text-white bg-[#7B4EA0] hover:bg-[#9B6FD0] border-2 border-[#7B4EA0] btn-glow transition-all duration-200 pixel-corners"
                 >
-                  Explore Services
+                  {h.ctaPrimary}
                 </a>
                 <a
                   href="#contact"
                   className="inline-flex items-center justify-center px-10 py-4 font-pixel text-xs bg-transparent hover:bg-[#48D8D0]/15 border-2 border-[#48D8D0] btn-glow-teal transition-all duration-200 pixel-corners"
-                  style={{ color: 'var(--text-primary)' }}
+                  style={{ color: "var(--text-primary)" }}
                 >
-                  Sell Your Games
+                  {h.ctaSecondary}
                 </a>
               </div>
 
-              <div className="flex flex-wrap justify-center lg:justify-start gap-6 mt-10 text-sm" style={{ color: 'var(--text-secondary)' }}>
-                <div className="flex items-center gap-2">
-                  <span className="text-[#50C890] font-bold text-base">✓</span>
-                  <span>Atari to PS5</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-[#50C890] font-bold text-base">✓</span>
-                  <span>All Games Tested</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-[#50C890] font-bold text-base">✓</span>
-                  <span>Fair Prices Guaranteed</span>
-                </div>
+              <div
+                className="flex flex-wrap justify-center lg:justify-start gap-6 mt-10 text-sm"
+                style={{ color: "var(--text-secondary)" }}
+              >
+                {h.trustBadges.map((badge) => (
+                  <div key={badge} className="flex items-center gap-2">
+                    <span className="text-[#50C890] font-bold text-base">✓</span>
+                    <span>{badge}</span>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -127,7 +135,7 @@ export default function Hero() {
               <div className="relative w-72 h-72 sm:w-96 sm:h-96 pixel-border rounded-none">
                 <Image
                   src="/logo.jpg"
-                  alt="Valerie the Viking — Dream Quest Video Games mascot"
+                  alt={`${content.mascot} — ${content.businessName} mascot`}
                   fill
                   className="object-cover"
                   priority
@@ -135,14 +143,14 @@ export default function Hero() {
               </div>
               {/* Floating badges */}
               <div className="absolute -top-4 -right-4 bg-[#7B4EA0] px-3 py-1.5 font-pixel text-[8px] text-white pixel-corners shadow-lg shadow-purple-300/60">
-                RETRO
+                {h.badgeRetro}
               </div>
               <div className="absolute -bottom-4 -left-4 bg-[#48D8D0] px-3 py-1.5 font-pixel text-[8px] text-[#1A1020] pixel-corners shadow-lg shadow-cyan-300/60">
-                MODERN
+                {h.badgeModern}
               </div>
               {/* Mascot label */}
               <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                <span className="font-pixel text-[8px] text-[#50C890] glow-green">⚔ Valerie the Viking</span>
+                <span className="font-pixel text-[8px] text-[#50C890] glow-green">{h.mascotLabel}</span>
               </div>
             </div>
           </div>

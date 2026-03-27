@@ -1,0 +1,256 @@
+backend:
+  name: github
+  repo: dreamquest-videogames/dreamquest-videogames.github.io
+  branch: main
+  # OAuth proxy — deploy via https://github.com/sveltia/sveltia-cms-auth (free Cloudflare Worker)
+  # Once deployed, replace the placeholder below with your worker URL:
+  base_url: https://YOUR-WORKER.YOUR-SUBDOMAIN.workers.dev
+  auth_endpoint: /callback
+
+# Uncomment to enable draft/review workflow (requires GitHub Pro or public repo):
+# publish_mode: editorial_workflow
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: "site"
+    label: "Site Content"
+    files:
+      - name: "content"
+        label: "All Site Content"
+        file: "public/content.json"
+        format: "json"
+        fields:
+
+          # ── BUSINESS INFO ──────────────────────────────────────
+          - { label: "Business Name", name: "businessName", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Mascot Name", name: "mascot", widget: "string" }
+          - { label: "Phone (display)", name: "phone", widget: "string", hint: "e.g. (360) 620-2354" }
+          - { label: "Phone (link — no spaces)", name: "phoneLink", widget: "string", hint: "e.g. +13606202354" }
+          - { label: "Email", name: "email", widget: "string" }
+
+          - label: "Address"
+            name: "address"
+            widget: "object"
+            fields:
+              - { label: "Street Address", name: "street", widget: "string" }
+              - { label: "City", name: "city", widget: "string" }
+              - { label: "State", name: "state", widget: "string" }
+
+          # ── STORE HOURS ────────────────────────────────────────
+          - label: "Store Hours"
+            name: "hours"
+            widget: "list"
+            hint: "Use 'Closed' (capital C) for days the store is not open"
+            fields:
+              - { label: "Day", name: "day", widget: "string" }
+              - { label: "Hours (or 'Closed')", name: "time", widget: "string" }
+
+          # ── HERO ───────────────────────────────────────────────
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Open Badge Text", name: "badge", widget: "string" }
+              - { label: "Closed Badge Text", name: "badgeClosed", widget: "string" }
+              - { label: "Headline Line 1", name: "headline1", widget: "string" }
+              - { label: "Headline Line 2", name: "headline2", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Mascot Line", name: "mascotLine", widget: "string" }
+              - { label: "Primary CTA Button", name: "ctaPrimary", widget: "string" }
+              - { label: "Secondary CTA Button", name: "ctaSecondary", widget: "string" }
+              - { label: "Retro Badge", name: "badgeRetro", widget: "string" }
+              - { label: "Modern Badge", name: "badgeModern", widget: "string" }
+              - { label: "Mascot Label", name: "mascotLabel", widget: "string" }
+              - label: "Trust Badges"
+                name: "trustBadges"
+                widget: "list"
+                field: { label: "Badge Text", name: "badge", widget: "string" }
+
+          # ── SERVICES ───────────────────────────────────────────
+          - label: "Services Section"
+            name: "services"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Section Label", name: "sectionLabel", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Subheading", name: "subheading", widget: "text" }
+              - label: "Service Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Icon (emoji)", name: "icon", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "Highlight Tag", name: "highlight", widget: "string" }
+                  - label: "Color"
+                    name: "color"
+                    widget: "select"
+                    options: ["purple", "teal", "green"]
+              - label: "Valerie Guarantee"
+                name: "guarantee"
+                widget: "object"
+                fields:
+                  - { label: "Icon (emoji)", name: "icon", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+
+          # ── RECONDITIONING ─────────────────────────────────────
+          - label: "Reconditioning Section"
+            name: "reconditioning"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Section Label", name: "sectionLabel", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Subheading", name: "subheading", widget: "text" }
+              - label: "Console Reconditioning"
+                name: "console"
+                widget: "object"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - label: "Features"
+                    name: "features"
+                    widget: "list"
+                    field: { label: "Feature", name: "feature", widget: "string" }
+                  - { label: "Footnote", name: "footnote", widget: "string" }
+              - label: "Disc Resurfacing"
+                name: "disc"
+                widget: "object"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - label: "Features"
+                    name: "features"
+                    widget: "list"
+                    field: { label: "Feature", name: "feature", widget: "string" }
+                  - { label: "Footnote", name: "footnote", widget: "string" }
+              - { label: "Pricing Note", name: "pricingNote", widget: "string" }
+              - { label: "CTA Button", name: "cta", widget: "string" }
+
+          # ── WHY CHOOSE US ──────────────────────────────────────
+          - label: "Why Choose Us Section"
+            name: "whyUs"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Section Label", name: "sectionLabel", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Subheading", name: "subheading", widget: "text" }
+              - label: "Trust Points"
+                name: "trustPoints"
+                widget: "list"
+                fields:
+                  - { label: "Icon (emoji)", name: "icon", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "Stat", name: "stat", widget: "string" }
+                  - { label: "Stat Label", name: "statLabel", widget: "string" }
+                  - label: "Color"
+                    name: "color"
+                    widget: "select"
+                    options: ["purple", "teal", "green"]
+              - label: "Mascot Story"
+                name: "mascotStory"
+                widget: "object"
+                fields:
+                  - { label: "Heading", name: "heading", widget: "string" }
+                  - { label: "Subheading", name: "subheading", widget: "string" }
+                  - { label: "Quote", name: "quote", widget: "string" }
+                  - label: "Paragraphs"
+                    name: "paragraphs"
+                    widget: "list"
+                    field: { label: "Paragraph", name: "paragraph", widget: "text" }
+
+          # ── CONTACT ────────────────────────────────────────────
+          - label: "Contact Section"
+            name: "contact"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Section Label", name: "sectionLabel", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Subheading", name: "subheading", widget: "text" }
+              - label: "Form"
+                name: "form"
+                widget: "object"
+                fields:
+                  - { label: "Name Placeholder", name: "namePlaceholder", widget: "string" }
+                  - { label: "Email Placeholder", name: "emailPlaceholder", widget: "string" }
+                  - label: "Subject Options"
+                    name: "subjects"
+                    widget: "list"
+                    fields:
+                      - { label: "Value (no spaces)", name: "value", widget: "string" }
+                      - { label: "Label (shown to user)", name: "label", widget: "string" }
+                  - { label: "Message Placeholder", name: "messagePlaceholder", widget: "text" }
+                  - { label: "Submit Button Label", name: "submitLabel", widget: "string" }
+                  - { label: "Success Icon (emoji)", name: "successIcon", widget: "string" }
+                  - { label: "Success Heading", name: "successHeading", widget: "string" }
+                  - { label: "Success Message", name: "successMessage", widget: "string" }
+              - { label: "Hours Label", name: "hoursLabel", widget: "string" }
+              - { label: "Quick Actions Label", name: "quickActionsLabel", widget: "string" }
+              - { label: "Socials Label", name: "socialsLabel", widget: "string" }
+
+          # ── SOCIAL LINKS ───────────────────────────────────────
+          - label: "Social Links"
+            name: "social"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Instagram"
+                name: "instagram"
+                widget: "object"
+                fields:
+                  - { label: "URL", name: "url", widget: "string" }
+                  - { label: "Handle", name: "handle", widget: "string" }
+              - label: "Facebook"
+                name: "facebook"
+                widget: "object"
+                fields:
+                  - { label: "URL", name: "url", widget: "string" }
+                  - { label: "Handle", name: "handle", widget: "string" }
+              - label: "Bluesky"
+                name: "bluesky"
+                widget: "object"
+                fields:
+                  - { label: "URL", name: "url", widget: "string" }
+                  - { label: "Handle", name: "handle", widget: "string" }
+
+          # ── FOOTER ─────────────────────────────────────────────
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Store Description", name: "description", widget: "text" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Explore Column Label", name: "exploreLabel", widget: "string" }
+              - { label: "Services Column Label", name: "servicesLabel", widget: "string" }
+              - { label: "Copyright Text", name: "copyright", widget: "string" }
+              - label: "Explore Links"
+                name: "exploreLinks"
+                widget: "list"
+                fields:
+                  - { label: "Anchor (e.g. #services)", name: "href", widget: "string" }
+                  - { label: "Label", name: "label", widget: "string" }
+              - label: "Service Link Labels"
+                name: "serviceLinks"
+                widget: "list"
+                field: { label: "Service Name", name: "service", widget: "string" }
+
+          # ── SEO ────────────────────────────────────────────────
+          - label: "SEO"
+            name: "seo"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Page Title", name: "title", widget: "string" }
+              - { label: "Meta Description", name: "description", widget: "text" }
+              - { label: "OG Description", name: "ogDescription", widget: "text" }

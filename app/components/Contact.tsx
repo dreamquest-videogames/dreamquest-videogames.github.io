@@ -1,11 +1,13 @@
 "use client";
 import { useState } from "react";
+import content from "../../public/content.json";
 
 export default function Contact() {
+  const c = content.contact;
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "buy",
+    subject: content.contact.form.subjects[0]?.value ?? "buy",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -19,20 +21,22 @@ export default function Contact() {
     <section
       id="contact"
       className="py-20 px-4 sm:px-6 lg:px-8 section-divider"
-      style={{ background: 'var(--bg-primary)' }}
+      style={{ background: "var(--bg-primary)" }}
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
-            <span className="font-pixel text-[10px] text-[#7B4EA0] font-bold">// GET IN TOUCH</span>
+            <span className="font-pixel text-[10px] text-[#7B4EA0] font-bold">{c.sectionLabel}</span>
           </div>
-          <h2 className="font-pixel text-xl sm:text-2xl mb-4 font-bold" style={{ color: 'var(--text-primary)' }}>
+          <h2
+            className="font-pixel text-xl sm:text-2xl mb-4 font-bold"
+            style={{ color: "var(--text-primary)" }}
+          >
             Contact <span className="text-[#7B4EA0] glow-purple">Us</span>
           </h2>
-          <p className="max-w-2xl mx-auto text-base" style={{ color: 'var(--text-secondary)' }}>
-            Have a question about our inventory? Want to sell your collection?
-            Need a repair quote? Drop us a message and we&apos;ll get back to you.
+          <p className="max-w-2xl mx-auto text-base" style={{ color: "var(--text-secondary)" }}>
+            {c.subheading}
           </p>
         </div>
 
@@ -41,18 +45,18 @@ export default function Contact() {
           <div
             className="border-l-4 border-l-[#7B4EA0] p-6 sm:p-8"
             style={{
-              background: 'var(--bg-card)',
-              boxShadow: 'var(--card-shadow)',
+              background: "var(--bg-card)",
+              boxShadow: "var(--card-shadow)",
             }}
           >
             {submitted ? (
               <div className="text-center py-12">
-                <div className="text-5xl mb-4">⚔️</div>
+                <div className="text-5xl mb-4">{c.form.successIcon}</div>
                 <h3 className="font-pixel text-sm text-[#3A9A70] glow-green mb-3 font-bold">
-                  Message Received!
+                  {c.form.successHeading}
                 </h3>
-                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                  Valerie has your message. We&apos;ll get back to you within 24 hours.
+                <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
+                  {c.form.successMessage}
                 </p>
               </div>
             ) : (
@@ -68,11 +72,11 @@ export default function Contact() {
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full border-2 focus:border-[#7B4EA0] px-4 py-3 outline-none transition-colors text-sm"
                     style={{
-                      background: 'var(--input-bg)',
-                      borderColor: 'var(--input-border)',
-                      color: 'var(--text-primary)',
+                      background: "var(--input-bg)",
+                      borderColor: "var(--input-border)",
+                      color: "var(--text-primary)",
                     }}
-                    placeholder="Player One"
+                    placeholder={c.form.namePlaceholder}
                   />
                 </div>
                 <div>
@@ -86,11 +90,11 @@ export default function Contact() {
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full border-2 focus:border-[#7B4EA0] px-4 py-3 outline-none transition-colors text-sm"
                     style={{
-                      background: 'var(--input-bg)',
-                      borderColor: 'var(--input-border)',
-                      color: 'var(--text-primary)',
+                      background: "var(--input-bg)",
+                      borderColor: "var(--input-border)",
+                      color: "var(--text-primary)",
                     }}
-                    placeholder="player@example.com"
+                    placeholder={c.form.emailPlaceholder}
                   />
                 </div>
                 <div>
@@ -102,16 +106,16 @@ export default function Contact() {
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                     className="w-full border-2 focus:border-[#7B4EA0] px-4 py-3 outline-none transition-colors text-sm"
                     style={{
-                      background: 'var(--input-bg)',
-                      borderColor: 'var(--input-border)',
-                      color: 'var(--text-primary)',
+                      background: "var(--input-bg)",
+                      borderColor: "var(--input-border)",
+                      color: "var(--text-primary)",
                     }}
                   >
-                    <option value="buy">Buy Games / Check Availability</option>
-                    <option value="sell">Sell My Games / Trade-In</option>
-                    <option value="repair">Console Repair Quote</option>
-                    <option value="disc">Disc Resurfacing</option>
-                    <option value="other">Other Question</option>
+                    {c.form.subjects.map((opt) => (
+                      <option key={opt.value} value={opt.value}>
+                        {opt.label}
+                      </option>
+                    ))}
                   </select>
                 </div>
                 <div>
@@ -125,18 +129,18 @@ export default function Contact() {
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full border-2 focus:border-[#7B4EA0] px-4 py-3 outline-none transition-colors text-sm resize-none"
                     style={{
-                      background: 'var(--input-bg)',
-                      borderColor: 'var(--input-border)',
-                      color: 'var(--text-primary)',
+                      background: "var(--input-bg)",
+                      borderColor: "var(--input-border)",
+                      color: "var(--text-primary)",
                     }}
-                    placeholder="Tell us what you're looking for, what you want to sell, or what needs repair..."
+                    placeholder={c.form.messagePlaceholder}
                   />
                 </div>
                 <button
                   type="submit"
                   className="w-full py-4 font-pixel text-xs text-white bg-[#7B4EA0] hover:bg-[#9B6FD0] border-2 border-[#7B4EA0] btn-glow transition-all duration-200 pixel-corners"
                 >
-                  Send Message →
+                  {c.form.submitLabel}
                 </button>
               </form>
             )}
@@ -148,26 +152,26 @@ export default function Contact() {
             <div
               className="border-l-4 border-l-[#7B4EA0] p-6"
               style={{
-                background: 'var(--bg-card)',
-                boxShadow: 'var(--card-shadow)',
+                background: "var(--bg-card)",
+                boxShadow: "var(--card-shadow)",
               }}
             >
-              <h3 className="font-pixel text-xs text-[#7B4EA0] mb-4 font-bold">🕐 Store Hours</h3>
+              <h3 className="font-pixel text-xs text-[#7B4EA0] mb-4 font-bold">{c.hoursLabel}</h3>
               <div className="space-y-2 text-sm">
-                {[
-                  { day: "Monday", hours: "11:00 AM – 7:00 PM" },
-                  { day: "Tuesday", hours: "11:00 AM – 7:00 PM" },
-                  { day: "Wednesday", hours: "Closed", closed: true },
-                  { day: "Thursday", hours: "11:00 AM – 7:00 PM" },
-                  { day: "Friday", hours: "11:00 AM – 7:00 PM" },
-                  { day: "Saturday", hours: "11:00 AM – 7:00 PM" },
-                  { day: "Sunday", hours: "11:00 AM – 7:00 PM" },
-                ].map(({ day, hours, closed }) => (
-                  <div key={day} className="flex justify-between">
-                    <span style={{ color: 'var(--text-secondary)' }}>{day}</span>
-                    <span className={closed ? "text-red-500 font-semibold" : "font-semibold"} style={!closed ? { color: 'var(--text-primary)' } : {}}>{hours}</span>
-                  </div>
-                ))}
+                {content.hours.map(({ day, time }) => {
+                  const closed = time === "Closed";
+                  return (
+                    <div key={day} className="flex justify-between">
+                      <span style={{ color: "var(--text-secondary)" }}>{day}</span>
+                      <span
+                        className={closed ? "text-red-500 font-semibold" : "font-semibold"}
+                        style={!closed ? { color: "var(--text-primary)" } : {}}
+                      >
+                        {time}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
 
@@ -175,23 +179,35 @@ export default function Contact() {
             <div
               className="border-l-4 border-l-[#48D8D0] p-6"
               style={{
-                background: 'var(--bg-card)',
-                boxShadow: '0 4px 20px rgba(72,216,208,0.18)',
+                background: "var(--bg-card)",
+                boxShadow: "0 4px 20px rgba(72,216,208,0.18)",
               }}
             >
-              <h3 className="font-pixel text-xs text-[#2AA8A2] mb-4 font-bold">⚡ Quick Actions</h3>
+              <h3 className="font-pixel text-xs text-[#2AA8A2] mb-4 font-bold">{c.quickActionsLabel}</h3>
               <div className="space-y-3">
-                <a href="tel:+13606202354" className="flex items-center gap-3 hover:text-[#2AA8A2] transition-colors text-sm group" style={{ color: 'var(--text-secondary)' }}>
+                <a
+                  href={`tel:${content.phoneLink}`}
+                  className="flex items-center gap-3 hover:text-[#2AA8A2] transition-colors text-sm group"
+                  style={{ color: "var(--text-secondary)" }}
+                >
                   <span className="text-[#48D8D0] group-hover:scale-110 transition-transform">📞</span>
-                  (360) 620-2354
+                  {content.phone}
                 </a>
-                <a href="mailto:contact.dreamquest@gmail.com" className="flex items-center gap-3 hover:text-[#2AA8A2] transition-colors text-sm group" style={{ color: 'var(--text-secondary)' }}>
+                <a
+                  href={`mailto:${content.email}`}
+                  className="flex items-center gap-3 hover:text-[#2AA8A2] transition-colors text-sm group"
+                  style={{ color: "var(--text-secondary)" }}
+                >
                   <span className="text-[#48D8D0] group-hover:scale-110 transition-transform">📧</span>
-                  contact.dreamquest@gmail.com
+                  {content.email}
                 </a>
-                <div className="flex items-start gap-3 text-sm" style={{ color: 'var(--text-secondary)' }}>
+                <div className="flex items-start gap-3 text-sm" style={{ color: "var(--text-secondary)" }}>
                   <span className="text-[#48D8D0]">📍</span>
-                  <span>19425 7th Ave. NE Suite 117<br />Poulsbo, WA</span>
+                  <span>
+                    {content.address.street}
+                    <br />
+                    {content.address.city}, {content.address.state}
+                  </span>
                 </div>
               </div>
             </div>
@@ -200,17 +216,17 @@ export default function Contact() {
             <div
               className="border-l-4 border-l-[#50C890] p-6"
               style={{
-                background: 'var(--bg-card)',
-                boxShadow: '0 4px 20px rgba(80,200,144,0.18)',
+                background: "var(--bg-card)",
+                boxShadow: "0 4px 20px rgba(80,200,144,0.18)",
               }}
             >
-              <h3 className="font-pixel text-xs text-[#3A9A70] mb-4 font-bold">🌐 Follow Us</h3>
+              <h3 className="font-pixel text-xs text-[#3A9A70] mb-4 font-bold">{c.socialsLabel}</h3>
               <div className="flex flex-wrap gap-3">
                 {[
-                  { name: "Instagram", handle: "@dreamquestgames", icon: "📸", url: "https://www.instagram.com/dreamquestgames/" },
-                  { name: "Facebook", handle: "dreamquestpoulsbo", icon: "📘", url: "https://www.facebook.com/dreamquestpoulsbo/" },
-                  { name: "Bluesky", handle: "@dreamquestgames.bsky.social", icon: "🦋", url: "https://bsky.app/profile/dreamquestgames.bsky.social" },
-                ].map((social) => (
+                  { name: "Instagram", handle: content.social.instagram.handle, icon: "📸", url: content.social.instagram.url },
+                  { name: "Facebook",  handle: content.social.facebook.handle,  icon: "📘", url: content.social.facebook.url  },
+                  { name: "Bluesky",   handle: content.social.bluesky.handle,   icon: "🦋", url: content.social.bluesky.url   },
+                ].filter((s) => s.url).map((social) => (
                   <a
                     key={social.name}
                     href={social.url}
@@ -218,14 +234,18 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 border px-3 py-2 text-xs transition-colors hover:border-[#50C890]"
                     style={{
-                      background: 'var(--input-bg)',
-                      borderColor: 'rgba(80,200,144,0.4)',
+                      background: "var(--input-bg)",
+                      borderColor: "rgba(80,200,144,0.4)",
                     }}
                   >
                     <span>{social.icon}</span>
                     <div>
-                      <div className="font-semibold" style={{ color: 'var(--text-primary)' }}>{social.name}</div>
-                      <div className="text-[10px]" style={{ color: 'var(--text-secondary)' }}>{social.handle}</div>
+                      <div className="font-semibold" style={{ color: "var(--text-primary)" }}>
+                        {social.name}
+                      </div>
+                      <div className="text-[10px]" style={{ color: "var(--text-secondary)" }}>
+                        {social.handle}
+                      </div>
                     </div>
                   </a>
                 ))}
