@@ -14,12 +14,12 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0D0D1A]/95 backdrop-blur-sm border-b border-[#7B2FBE]/40">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0A0E14]/95 backdrop-blur-sm border-b border-[#7B4EA0]/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10 rounded-sm overflow-hidden border border-[#7B2FBE]/60 group-hover:border-[#7B2FBE] transition-all duration-300">
+            <div className="relative w-10 h-10 rounded-sm overflow-hidden border border-[#7B4EA0]/60 group-hover:border-[#7B4EA0] transition-all duration-300">
               <Image
                 src="/logo.jpg"
                 alt="Dream Quest Video Games"
@@ -28,10 +28,10 @@ export default function Navbar() {
               />
             </div>
             <div>
-              <span className="font-pixel text-xs text-[#7B2FBE] glow-purple hidden sm:block">
+              <span className="font-pixel text-xs text-[#7B4EA0] glow-purple hidden sm:block">
                 Dream Quest
               </span>
-              <span className="font-pixel text-[8px] text-[#00BCD4] hidden sm:block">
+              <span className="font-pixel text-[8px] text-[#48D8D0] hidden sm:block">
                 Video Games
               </span>
             </div>
@@ -43,7 +43,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-gray-300 hover:text-[#00BCD4] transition-colors duration-200 font-medium"
+                className="text-sm text-gray-300 hover:text-[#48D8D0] transition-colors duration-200 font-medium"
               >
                 {link.label}
               </a>
@@ -54,7 +54,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <a
               href="#contact"
-              className="hidden md:inline-flex items-center px-4 py-2 font-pixel text-[10px] text-white bg-[#7B2FBE] hover:bg-[#9B4FD8] border border-[#7B2FBE] btn-glow rounded-none transition-all duration-200 pixel-corners"
+              className="hidden md:inline-flex items-center px-4 py-2 font-pixel text-[10px] text-white bg-[#7B4EA0] hover:bg-[#9B6FD0] border border-[#7B4EA0] btn-glow rounded-none transition-all duration-200 pixel-corners"
             >
               Sell Your Games
             </a>
@@ -74,13 +74,13 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         {menuOpen && (
-          <div className="md:hidden border-t border-[#7B2FBE]/30 py-4 space-y-3">
+          <div className="md:hidden border-t border-[#7B4EA0]/30 py-4 space-y-3">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="block text-sm text-gray-300 hover:text-[#00BCD4] transition-colors py-1"
+                className="block text-sm text-gray-300 hover:text-[#48D8D0] transition-colors py-1"
               >
                 {link.label}
               </a>
@@ -88,7 +88,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => setMenuOpen(false)}
-              className="inline-flex items-center px-4 py-2 font-pixel text-[10px] text-white bg-[#7B2FBE] border border-[#7B2FBE] rounded-none mt-2"
+              className="inline-flex items-center px-4 py-2 font-pixel text-[10px] text-white bg-[#7B4EA0] border border-[#7B4EA0] rounded-none mt-2"
             >
               Sell Your Games
             </a>

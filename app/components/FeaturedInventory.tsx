@@ -18,11 +18,11 @@ const inventory = [
 ];
 
 const badgeColors: Record<string, string> = {
-  CLASSIC: "bg-[#7B2FBE] text-white",
-  POPULAR: "bg-[#00BCD4] text-[#0D0D1A]",
-  CIB: "bg-[#4CAF50] text-white",
+  CLASSIC: "bg-[#7B4EA0] text-white",
+  POPULAR: "bg-[#48D8D0] text-[#0A0E14]",
+  CIB: "bg-[#50C890] text-white",
   HOT: "bg-red-600 text-white",
-  RARE: "bg-yellow-500 text-[#0D0D1A]",
+  RARE: "bg-yellow-500 text-[#0A0E14]",
   RETRO: "bg-orange-500 text-white",
   DEAL: "bg-emerald-500 text-white",
   MODERN: "bg-blue-500 text-white",
@@ -32,7 +32,7 @@ const eraColors: Record<string, string> = {
   Atari: "#FFB300",
   NES: "#FF5722",
   SNES: "#9C27B0",
-  N64: "#00BCD4",
+  N64: "#48D8D0",
   PS1: "#607D8B",
   PS2: "#1565C0",
   GameBoy: "#43A047",
@@ -49,15 +49,15 @@ const eraColors: Record<string, string> = {
 
 export default function FeaturedInventory() {
   return (
-    <section id="inventory" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#080810]">
+    <section id="inventory" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#060A10]">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
-            <span className="font-pixel text-[10px] text-[#00BCD4]">// BROWSE THE VAULT</span>
+            <span className="font-pixel text-[10px] text-[#48D8D0]">// BROWSE THE VAULT</span>
           </div>
           <h2 className="font-pixel text-xl sm:text-2xl text-white mb-4">
-            Featured <span className="text-[#00BCD4] glow-teal">Inventory</span>
+            Featured <span className="text-[#48D8D0] glow-teal">Inventory</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             A rotating selection from our shelves — spanning 40+ years of gaming history.
@@ -70,22 +70,22 @@ export default function FeaturedInventory() {
           {inventory.map((item, idx) => (
             <div
               key={idx}
-              className="bg-[#0D0D1A] border border-[#7B2FBE]/30 hover:border-[#7B2FBE] card-hover p-4 relative group"
+              className="bg-[#0A0E14] border border-[#7B4EA0]/30 hover:border-[#7B4EA0] card-hover p-4 relative group"
             >
               {/* Era badge */}
               <div
                 className="inline-block px-2 py-0.5 text-[9px] font-pixel mb-3 font-bold"
                 style={{
-                  backgroundColor: `${eraColors[item.era] || "#7B2FBE"}22`,
-                  color: eraColors[item.era] || "#7B2FBE",
-                  border: `1px solid ${eraColors[item.era] || "#7B2FBE"}66`,
+                  backgroundColor: `${eraColors[item.era] || "#7B4EA0"}22`,
+                  color: eraColors[item.era] || "#7B4EA0",
+                  border: `1px solid ${eraColors[item.era] || "#7B4EA0"}66`,
                 }}
               >
                 {item.era}
               </div>
 
               {/* Game icon placeholder */}
-              <div className="w-full h-24 bg-gradient-to-br from-[#7B2FBE]/20 to-[#00BCD4]/10 border border-[#7B2FBE]/20 mb-3 flex items-center justify-center text-3xl group-hover:border-[#7B2FBE]/50 transition-all">
+              <div className="w-full h-24 bg-gradient-to-br from-[#7B4EA0]/20 to-[#48D8D0]/10 border border-[#7B4EA0]/20 mb-3 flex items-center justify-center text-3xl group-hover:border-[#7B4EA0]/50 transition-all">
                 🎮
               </div>
 
@@ -97,7 +97,7 @@ export default function FeaturedInventory() {
 
               <div className="flex items-center justify-between">
                 {/* Price */}
-                <span className="font-pixel text-sm text-[#4CAF50] glow-green">
+                <span className="font-pixel text-sm text-[#50C890] glow-green">
                   {item.price}
                 </span>
                 {/* Status badge */}
@@ -120,7 +120,7 @@ export default function FeaturedInventory() {
           </p>
           <a
             href="#contact"
-            className="inline-flex items-center px-8 py-4 font-pixel text-xs text-white bg-[#7B2FBE] hover:bg-[#9B4FD8] border-2 border-[#7B2FBE] btn-glow transition-all duration-200 pixel-corners"
+            className="inline-flex items-center px-8 py-4 font-pixel text-xs text-white bg-[#7B4EA0] hover:bg-[#9B6FD0] border-2 border-[#7B4EA0] btn-glow transition-all duration-200 pixel-corners"
           >
             Check Availability →
           </a>

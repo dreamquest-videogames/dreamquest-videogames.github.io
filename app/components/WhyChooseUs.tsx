@@ -57,36 +57,36 @@ const trustSignals = [
 
 const colorMap = {
   purple: {
-    border: "border-[#7B2FBE]/30 hover:border-[#7B2FBE]/70",
-    icon: "bg-[#7B2FBE]/20",
-    stat: "text-[#7B2FBE]",
-    label: "text-[#7B2FBE]/60",
+    border: "border-[#7B4EA0]/30 hover:border-[#7B4EA0]/70",
+    icon: "bg-[#7B4EA0]/20",
+    stat: "text-[#7B4EA0]",
+    label: "text-[#7B4EA0]/60",
   },
   teal: {
-    border: "border-[#00BCD4]/30 hover:border-[#00BCD4]/70",
-    icon: "bg-[#00BCD4]/20",
-    stat: "text-[#00BCD4]",
-    label: "text-[#00BCD4]/60",
+    border: "border-[#48D8D0]/30 hover:border-[#48D8D0]/70",
+    icon: "bg-[#48D8D0]/20",
+    stat: "text-[#48D8D0]",
+    label: "text-[#48D8D0]/60",
   },
   green: {
-    border: "border-[#4CAF50]/30 hover:border-[#4CAF50]/70",
-    icon: "bg-[#4CAF50]/20",
-    stat: "text-[#4CAF50]",
-    label: "text-[#4CAF50]/60",
+    border: "border-[#50C890]/30 hover:border-[#50C890]/70",
+    icon: "bg-[#50C890]/20",
+    stat: "text-[#50C890]",
+    label: "text-[#50C890]/60",
   },
 };
 
 export default function WhyChooseUs() {
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0D0D1A]">
+    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0A0E14]">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
-            <span className="font-pixel text-[10px] text-[#00BCD4]">// WHY DREAM QUEST</span>
+            <span className="font-pixel text-[10px] text-[#48D8D0]">// WHY DREAM QUEST</span>
           </div>
           <h2 className="font-pixel text-xl sm:text-2xl text-white mb-4">
-            Why Choose <span className="text-[#00BCD4] glow-teal">Us</span>
+            Why Choose <span className="text-[#48D8D0] glow-teal">Us</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             In a world of online marketplaces and big-box retailers, Dream Quest is something different.
@@ -101,7 +101,7 @@ export default function WhyChooseUs() {
             return (
               <div
                 key={idx}
-                className={`bg-[#080810] border ${colors.border} p-6 card-hover transition-all duration-300`}
+                className={`bg-[#060A10] border ${colors.border} p-6 card-hover transition-all duration-300`}
               >
                 {/* Icon + stat row */}
                 <div className="flex items-start justify-between mb-4">
@@ -122,9 +122,9 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Valerie lore section */}
-        <div className="bg-gradient-to-r from-[#7B2FBE]/10 via-[#0D0D1A] to-[#00BCD4]/10 border border-[#7B2FBE]/30 p-8 sm:p-10">
+        <div className="bg-gradient-to-r from-[#7B4EA0]/10 via-[#0A0E14] to-[#48D8D0]/10 border border-[#7B4EA0]/30 p-8 sm:p-10">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="font-pixel text-[10px] text-[#7B2FBE] mb-4">⚔️ THE LEGEND OF VALERIE ⚔️</div>
+            <div className="font-pixel text-[10px] text-[#7B4EA0] mb-4">⚔️ THE LEGEND OF VALERIE ⚔️</div>
             <h3 className="font-pixel text-base text-white mb-4">
               Our Mascot Has a Story
             </h3>
@@ -139,7 +139,7 @@ export default function WhyChooseUs() {
               through her hands is worthy of a new player&apos;s shelf. She&apos;s the reason
               we don&apos;t sell junk. She won&apos;t allow it.
             </p>
-            <div className="mt-6 font-pixel text-[8px] text-[#4CAF50] glow-green">
+            <div className="mt-6 font-pixel text-[8px] text-[#50C890] glow-green">
               &quot;Every cartridge tells a story. Make sure it&apos;s a good one.&quot; — Valerie
             </div>
           </div>

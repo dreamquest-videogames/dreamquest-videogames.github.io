@@ -48,28 +48,28 @@ const colorMap = {
 };
 
 const iconBgMap = {
-  purple: "bg-[#7B2FBE]/20 border border-[#7B2FBE]/40",
-  teal: "bg-[#00BCD4]/20 border border-[#00BCD4]/40",
-  green: "bg-[#4CAF50]/20 border border-[#4CAF50]/40",
+  purple: "bg-[#7B4EA0]/20 border border-[#7B4EA0]/40",
+  teal: "bg-[#48D8D0]/20 border border-[#48D8D0]/40",
+  green: "bg-[#50C890]/20 border border-[#50C890]/40",
 };
 
 const highlightColorMap = {
-  purple: "text-[#7B2FBE]",
-  teal: "text-[#00BCD4]",
-  green: "text-[#4CAF50]",
+  purple: "text-[#7B4EA0]",
+  teal: "text-[#48D8D0]",
+  green: "text-[#50C890]",
 };
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0D0D1A]">
+    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0A0E14]">
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
-            <span className="font-pixel text-[10px] text-[#7B2FBE]">// WHAT WE DO</span>
+            <span className="font-pixel text-[10px] text-[#7B4EA0]">// WHAT WE DO</span>
           </div>
           <h2 className="font-pixel text-xl sm:text-2xl text-white mb-4">
-            Our <span className="text-[#7B2FBE] glow-purple">Services</span>
+            Our <span className="text-[#7B4EA0] glow-purple">Services</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             From trade-ins to restoration — Valerie the Viking keeps watch over every transaction.
@@ -105,11 +105,11 @@ export default function Services() {
           ))}
 
           {/* Bonus card — span 2 columns on large screens */}
-          <div className="pixel-border bg-white/3 p-6 card-hover md:col-span-2 lg:col-span-3 lg:max-w-none border-[#4CAF50] shadow-[0_0_10px_rgba(76,175,80,0.5)]">
+          <div className="pixel-border bg-white/3 p-6 card-hover md:col-span-2 lg:col-span-3 lg:max-w-none border-[#50C890] shadow-[0_0_10px_rgba(76,175,80,0.5)]">
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <div className="text-4xl">⚔️</div>
               <div>
-                <h3 className="font-pixel text-sm text-[#4CAF50] glow-green mb-2">
+                <h3 className="font-pixel text-sm text-[#50C890] glow-green mb-2">
                   The Valerie Guarantee
                 </h3>
                 <p className="text-gray-300 text-sm">

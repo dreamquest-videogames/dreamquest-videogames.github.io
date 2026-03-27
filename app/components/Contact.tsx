@@ -17,15 +17,15 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#080810]">
+    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#060A10]">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
-            <span className="font-pixel text-[10px] text-[#7B2FBE]">// GET IN TOUCH</span>
+            <span className="font-pixel text-[10px] text-[#7B4EA0]">// GET IN TOUCH</span>
           </div>
           <h2 className="font-pixel text-xl sm:text-2xl text-white mb-4">
-            Contact <span className="text-[#7B2FBE] glow-purple">Us</span>
+            Contact <span className="text-[#7B4EA0] glow-purple">Us</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Have a question about our inventory? Want to sell your collection?
@@ -35,11 +35,11 @@ export default function Contact() {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact form */}
-          <div className="pixel-border bg-[#0D0D1A]/80 p-6 sm:p-8">
+          <div className="pixel-border bg-[#0A0E14]/80 p-6 sm:p-8">
             {submitted ? (
               <div className="text-center py-12">
                 <div className="text-5xl mb-4">⚔️</div>
-                <h3 className="font-pixel text-sm text-[#4CAF50] glow-green mb-3">
+                <h3 className="font-pixel text-sm text-[#50C890] glow-green mb-3">
                   Message Received!
                 </h3>
                 <p className="text-gray-300 text-sm">
@@ -49,7 +49,7 @@ export default function Contact() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                  <label className="block font-pixel text-[9px] text-[#7B2FBE] mb-2">
+                  <label className="block font-pixel text-[9px] text-[#7B4EA0] mb-2">
                     Your Name
                   </label>
                   <input
@@ -57,12 +57,12 @@ export default function Contact() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-[#080810] border border-[#7B2FBE]/30 focus:border-[#7B2FBE] text-white px-4 py-3 outline-none transition-colors text-sm"
+                    className="w-full bg-[#060A10] border border-[#7B4EA0]/30 focus:border-[#7B4EA0] text-white px-4 py-3 outline-none transition-colors text-sm"
                     placeholder="Player One"
                   />
                 </div>
                 <div>
-                  <label className="block font-pixel text-[9px] text-[#7B2FBE] mb-2">
+                  <label className="block font-pixel text-[9px] text-[#7B4EA0] mb-2">
                     Email Address
                   </label>
                   <input
@@ -70,18 +70,18 @@ export default function Contact() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-[#080810] border border-[#7B2FBE]/30 focus:border-[#7B2FBE] text-white px-4 py-3 outline-none transition-colors text-sm"
+                    className="w-full bg-[#060A10] border border-[#7B4EA0]/30 focus:border-[#7B4EA0] text-white px-4 py-3 outline-none transition-colors text-sm"
                     placeholder="player@example.com"
                   />
                 </div>
                 <div>
-                  <label className="block font-pixel text-[9px] text-[#7B2FBE] mb-2">
+                  <label className="block font-pixel text-[9px] text-[#7B4EA0] mb-2">
                     I Want To...
                   </label>
                   <select
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="w-full bg-[#080810] border border-[#7B2FBE]/30 focus:border-[#7B2FBE] text-white px-4 py-3 outline-none transition-colors text-sm"
+                    className="w-full bg-[#060A10] border border-[#7B4EA0]/30 focus:border-[#7B4EA0] text-white px-4 py-3 outline-none transition-colors text-sm"
                   >
                     <option value="buy">Buy Games / Check Availability</option>
                     <option value="sell">Sell My Games / Trade-In</option>
@@ -92,7 +92,7 @@ export default function Contact() {
                   </select>
                 </div>
                 <div>
-                  <label className="block font-pixel text-[9px] text-[#7B2FBE] mb-2">
+                  <label className="block font-pixel text-[9px] text-[#7B4EA0] mb-2">
                     Message
                   </label>
                   <textarea
@@ -100,13 +100,13 @@ export default function Contact() {
                     rows={4}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full bg-[#080810] border border-[#7B2FBE]/30 focus:border-[#7B2FBE] text-white px-4 py-3 outline-none transition-colors text-sm resize-none"
+                    className="w-full bg-[#060A10] border border-[#7B4EA0]/30 focus:border-[#7B4EA0] text-white px-4 py-3 outline-none transition-colors text-sm resize-none"
                     placeholder="Tell us what you're looking for, what you want to sell, or what needs repair..."
                   />
                 </div>
                 <button
                   type="submit"
-                  className="w-full py-4 font-pixel text-xs text-white bg-[#7B2FBE] hover:bg-[#9B4FD8] border-2 border-[#7B2FBE] btn-glow transition-all duration-200 pixel-corners"
+                  className="w-full py-4 font-pixel text-xs text-white bg-[#7B4EA0] hover:bg-[#9B6FD0] border-2 border-[#7B4EA0] btn-glow transition-all duration-200 pixel-corners"
                 >
                   Send Message →
                 </button>
@@ -117,8 +117,8 @@ export default function Contact() {
           {/* Info sidebar */}
           <div className="space-y-6">
             {/* Hours */}
-            <div className="border border-[#7B2FBE]/30 bg-[#0D0D1A] p-6">
-              <h3 className="font-pixel text-xs text-[#7B2FBE] mb-4">🕐 Store Hours</h3>
+            <div className="border border-[#7B4EA0]/30 bg-[#0A0E14] p-6">
+              <h3 className="font-pixel text-xs text-[#7B4EA0] mb-4">🕐 Store Hours</h3>
               <div className="space-y-2 text-sm">
                 {[
                   { day: "Monday", hours: "11:00 AM – 7:00 PM" },
@@ -138,27 +138,27 @@ export default function Contact() {
             </div>
 
             {/* Quick actions */}
-            <div className="border border-[#00BCD4]/30 bg-[#0D0D1A] p-6">
-              <h3 className="font-pixel text-xs text-[#00BCD4] mb-4">⚡ Quick Actions</h3>
+            <div className="border border-[#48D8D0]/30 bg-[#0A0E14] p-6">
+              <h3 className="font-pixel text-xs text-[#48D8D0] mb-4">⚡ Quick Actions</h3>
               <div className="space-y-3">
-                <a href="tel:+13606202354" className="flex items-center gap-3 text-gray-300 hover:text-[#00BCD4] transition-colors text-sm group">
-                  <span className="text-[#00BCD4] group-hover:scale-110 transition-transform">📞</span>
+                <a href="tel:+13606202354" className="flex items-center gap-3 text-gray-300 hover:text-[#48D8D0] transition-colors text-sm group">
+                  <span className="text-[#48D8D0] group-hover:scale-110 transition-transform">📞</span>
                   (360) 620-2354
                 </a>
-                <a href="mailto:contact.dreamquest@gmail.com" className="flex items-center gap-3 text-gray-300 hover:text-[#00BCD4] transition-colors text-sm group">
-                  <span className="text-[#00BCD4] group-hover:scale-110 transition-transform">📧</span>
+                <a href="mailto:contact.dreamquest@gmail.com" className="flex items-center gap-3 text-gray-300 hover:text-[#48D8D0] transition-colors text-sm group">
+                  <span className="text-[#48D8D0] group-hover:scale-110 transition-transform">📧</span>
                   contact.dreamquest@gmail.com
                 </a>
                 <div className="flex items-start gap-3 text-gray-300 text-sm">
-                  <span className="text-[#00BCD4]">📍</span>
+                  <span className="text-[#48D8D0]">📍</span>
                   <span>19425 7th Ave. NE Suite 117<br />Poulsbo, WA</span>
                 </div>
               </div>
             </div>
 
             {/* Social */}
-            <div className="border border-[#4CAF50]/30 bg-[#0D0D1A] p-6">
-              <h3 className="font-pixel text-xs text-[#4CAF50] mb-4">🌐 Follow Us</h3>
+            <div className="border border-[#50C890]/30 bg-[#0A0E14] p-6">
+              <h3 className="font-pixel text-xs text-[#50C890] mb-4">🌐 Follow Us</h3>
               <div className="flex flex-wrap gap-3">
                 {[
                   { name: "Instagram", handle: "@dreamquestgames", icon: "📸", url: "https://www.instagram.com/dreamquestgames/" },
@@ -171,7 +171,7 @@ export default function Contact() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 bg-[#080810] border border-[#4CAF50]/20 hover:border-[#4CAF50]/60 px-3 py-2 text-xs transition-colors"
+                    className="flex items-center gap-2 bg-[#060A10] border border-[#50C890]/20 hover:border-[#50C890]/60 px-3 py-2 text-xs transition-colors"
                   >
                     <span>{social.icon}</span>
                     <div>

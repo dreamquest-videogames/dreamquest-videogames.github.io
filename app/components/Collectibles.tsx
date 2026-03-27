@@ -50,22 +50,22 @@ const collectibles = [
 ];
 
 const statusColors: Record<string, string> = {
-  "In Stock": "text-[#4CAF50] border-[#4CAF50]/40 bg-[#4CAF50]/10",
+  "In Stock": "text-[#50C890] border-[#50C890]/40 bg-[#50C890]/10",
   Limited: "text-yellow-400 border-yellow-400/40 bg-yellow-400/10",
-  Preorder: "text-[#00BCD4] border-[#00BCD4]/40 bg-[#00BCD4]/10",
+  Preorder: "text-[#48D8D0] border-[#48D8D0]/40 bg-[#48D8D0]/10",
 };
 
 export default function Collectibles() {
   return (
-    <section id="collectibles" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#080810]">
+    <section id="collectibles" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#060A10]">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
-            <span className="font-pixel text-[10px] text-[#4CAF50]">// ANIME & FIGURES</span>
+            <span className="font-pixel text-[10px] text-[#50C890]">// ANIME & FIGURES</span>
           </div>
           <h2 className="font-pixel text-xl sm:text-2xl text-white mb-4">
-            Anime <span className="text-[#4CAF50] glow-green">Collectibles</span>
+            Anime <span className="text-[#50C890] glow-green">Collectibles</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Museum-quality anime statues and premium figures from the most iconic series.
@@ -78,17 +78,17 @@ export default function Collectibles() {
           {collectibles.map((item, idx) => (
             <div
               key={idx}
-              className="bg-[#0D0D1A] border border-[#4CAF50]/20 hover:border-[#4CAF50]/60 card-hover p-5 group"
+              className="bg-[#0A0E14] border border-[#50C890]/20 hover:border-[#50C890]/60 card-hover p-5 group"
             >
               {/* Figure display area */}
-              <div className="w-full h-40 bg-gradient-to-br from-[#4CAF50]/10 to-[#7B2FBE]/10 border border-[#4CAF50]/20 group-hover:border-[#4CAF50]/40 mb-4 flex flex-col items-center justify-center transition-all">
+              <div className="w-full h-40 bg-gradient-to-br from-[#50C890]/10 to-[#7B4EA0]/10 border border-[#50C890]/20 group-hover:border-[#50C890]/40 mb-4 flex flex-col items-center justify-center transition-all">
                 <span className="text-5xl mb-2">⛩️</span>
-                <span className="font-pixel text-[8px] text-[#4CAF50]/60">{item.height}</span>
+                <span className="font-pixel text-[8px] text-[#50C890]/60">{item.height}</span>
               </div>
 
               {/* Details */}
               <div className="mb-2">
-                <span className="font-pixel text-[8px] text-[#7B2FBE]">{item.series}</span>
+                <span className="font-pixel text-[8px] text-[#7B4EA0]">{item.series}</span>
               </div>
               <h3 className="text-white text-sm font-semibold mb-1 leading-tight">
                 {item.name}
@@ -96,7 +96,7 @@ export default function Collectibles() {
               <p className="text-gray-500 text-xs mb-3">{item.type}</p>
 
               <div className="flex items-center justify-between">
-                <span className="font-pixel text-base text-[#4CAF50] glow-green">
+                <span className="font-pixel text-base text-[#50C890] glow-green">
                   {item.price}
                 </span>
                 <span className={`font-pixel text-[8px] px-2 py-1 border ${statusColors[item.status]}`}>
@@ -108,9 +108,9 @@ export default function Collectibles() {
         </div>
 
         {/* Banner */}
-        <div className="pixel-border-green bg-[#4CAF50]/5 p-6 sm:p-8 text-center">
+        <div className="pixel-border-green bg-[#50C890]/5 p-6 sm:p-8 text-center">
           <div className="text-4xl mb-4">🏆</div>
-          <h3 className="font-pixel text-base text-[#4CAF50] glow-green mb-3">
+          <h3 className="font-pixel text-base text-[#50C890] glow-green mb-3">
             Collector&apos;s Paradise
           </h3>
           <p className="text-gray-300 text-sm max-w-xl mx-auto mb-6">
@@ -119,7 +119,7 @@ export default function Collectibles() {
           </p>
           <a
             href="#contact"
-            className="inline-flex items-center px-6 py-3 font-pixel text-xs text-white bg-[#4CAF50] hover:bg-[#66BB6A] border-2 border-[#4CAF50] transition-all duration-200 pixel-corners"
+            className="inline-flex items-center px-6 py-3 font-pixel text-xs text-white bg-[#50C890] hover:bg-[#66BB6A] border-2 border-[#50C890] transition-all duration-200 pixel-corners"
           >
             Request a Figure →
           </a>
