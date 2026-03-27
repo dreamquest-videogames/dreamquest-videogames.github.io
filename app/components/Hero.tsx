@@ -36,7 +36,10 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden bg-[#FFFFFF]">
+    <section
+      className="relative min-h-screen flex flex-col overflow-hidden"
+      style={{ background: 'var(--bg-primary)' }}
+    >
       {/* Bold gradient band at top */}
       <div className="h-1.5 w-full bg-gradient-to-r from-[#7B4EA0] via-[#48D8D0] to-[#50C890] flex-shrink-0" />
 
@@ -68,7 +71,7 @@ export default function Hero() {
               </div>
 
               <h1 className="font-pixel text-2xl sm:text-3xl lg:text-4xl leading-relaxed mb-6">
-                <span className="text-[#1A1020]">Dream Quest</span>
+                <span style={{ color: 'var(--text-primary)' }}>Dream Quest</span>
                 <br />
                 <span className="text-[#7B4EA0] glow-purple">Video Games</span>
               </h1>
@@ -77,7 +80,7 @@ export default function Hero() {
                 &quot;Keeping Score Since &apos;24&quot;
               </p>
 
-              <p className="text-[#4A4458] text-lg leading-relaxed mb-4 max-w-xl">
+              <p className="text-lg leading-relaxed mb-4 max-w-xl" style={{ color: 'var(--text-secondary)' }}>
                 Your ultimate destination for retro classics and modern hits.
                 Buy, sell, and trade games spanning every era — from dusty Atari
                 cartridges to the latest PS5 titles.
@@ -96,13 +99,14 @@ export default function Hero() {
                 </a>
                 <a
                   href="#contact"
-                  className="inline-flex items-center justify-center px-10 py-4 font-pixel text-xs text-[#1A1020] bg-transparent hover:bg-[#48D8D0]/15 border-2 border-[#48D8D0] btn-glow-teal transition-all duration-200 pixel-corners"
+                  className="inline-flex items-center justify-center px-10 py-4 font-pixel text-xs bg-transparent hover:bg-[#48D8D0]/15 border-2 border-[#48D8D0] btn-glow-teal transition-all duration-200 pixel-corners"
+                  style={{ color: 'var(--text-primary)' }}
                 >
                   Sell Your Games
                 </a>
               </div>
 
-              <div className="flex flex-wrap justify-center lg:justify-start gap-6 mt-10 text-sm text-[#4A4458]">
+              <div className="flex flex-wrap justify-center lg:justify-start gap-6 mt-10 text-sm" style={{ color: 'var(--text-secondary)' }}>
                 <div className="flex items-center gap-2">
                   <span className="text-[#50C890] font-bold text-base">✓</span>
                   <span>Atari to PS5</span>

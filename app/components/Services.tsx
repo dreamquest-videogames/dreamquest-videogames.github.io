@@ -36,19 +36,16 @@ const services = [
 const cardStyleMap = {
   purple: {
     border: "border-l-4 border-l-[#7B4EA0]",
-    shadow: "shadow-[0_4px_20px_rgba(123,78,160,0.15)]",
     icon: "bg-[#7B4EA0]/20 text-[#7B4EA0]",
     highlight: "text-[#7B4EA0]",
   },
   teal: {
     border: "border-l-4 border-l-[#48D8D0]",
-    shadow: "shadow-[0_4px_20px_rgba(72,216,208,0.18)]",
     icon: "bg-[#48D8D0]/20 text-[#2AA8A2]",
     highlight: "text-[#2AA8A2]",
   },
   green: {
     border: "border-l-4 border-l-[#50C890]",
-    shadow: "shadow-[0_4px_20px_rgba(80,200,144,0.18)]",
     icon: "bg-[#50C890]/20 text-[#3A9A70]",
     highlight: "text-[#3A9A70]",
   },
@@ -56,17 +53,21 @@ const cardStyleMap = {
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F0EAF7] section-divider">
+    <section
+      id="services"
+      className="py-20 px-4 sm:px-6 lg:px-8 section-divider"
+      style={{ background: 'var(--bg-secondary)' }}
+    >
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
             <span className="font-pixel text-[10px] text-[#7B4EA0] font-bold">// WHAT WE DO</span>
           </div>
-          <h2 className="font-pixel text-xl sm:text-2xl text-[#1A1020] mb-4 font-bold">
+          <h2 className="font-pixel text-xl sm:text-2xl mb-4 font-bold" style={{ color: 'var(--text-primary)' }}>
             Our <span className="text-[#7B4EA0] glow-purple">Services</span>
           </h2>
-          <p className="text-[#4A4458] max-w-2xl mx-auto text-base">
+          <p className="max-w-2xl mx-auto text-base" style={{ color: 'var(--text-secondary)' }}>
             From trade-ins to restoration — Valerie the Viking keeps watch over every transaction.
             Here&apos;s everything we offer under one roof.
           </p>
@@ -80,7 +81,11 @@ export default function Services() {
             return (
               <div
                 key={idx}
-                className={`bg-white ${styles.border} ${styles.shadow} p-6 card-hover transition-all duration-300${isOrphan ? " lg:col-start-2" : ""}`}
+                className={`${styles.border} p-6 card-hover transition-all duration-300${isOrphan ? " lg:col-start-2" : ""}`}
+                style={{
+                  background: 'var(--bg-card)',
+                  boxShadow: 'var(--card-shadow)',
+                }}
               >
                 {/* Icon */}
                 <div className={`inline-flex items-center justify-center w-14 h-14 text-2xl mb-4 ${styles.icon}`}>
@@ -88,10 +93,10 @@ export default function Services() {
                 </div>
 
                 {/* Content */}
-                <h3 className="font-pixel text-sm text-[#1A1020] mb-3 font-bold">
+                <h3 className="font-pixel text-sm mb-3 font-bold" style={{ color: 'var(--text-primary)' }}>
                   {service.title}
                 </h3>
-                <p className="text-[#4A4458] text-sm leading-relaxed mb-4">
+                <p className="text-sm leading-relaxed mb-4" style={{ color: 'var(--text-secondary)' }}>
                   {service.description}
                 </p>
 
@@ -105,14 +110,17 @@ export default function Services() {
         </div>
 
         {/* Valerie Guarantee — full-width */}
-        <div className="bg-white border-l-4 border-l-[#50C890] shadow-[0_4px_20px_rgba(80,200,144,0.2)] p-6 card-hover">
+        <div
+          className="border-l-4 border-l-[#50C890] shadow-[0_4px_20px_rgba(80,200,144,0.2)] p-6 card-hover"
+          style={{ background: 'var(--bg-card)' }}
+        >
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <div className="text-4xl">⚔️</div>
             <div>
               <h3 className="font-pixel text-sm text-[#3A9A70] glow-green mb-2 font-bold">
                 The Valerie Guarantee
               </h3>
-              <p className="text-[#4A4458] text-sm">
+              <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
                 Every game we sell is tested and verified before hitting our shelves. Valerie doesn&apos;t let bad deals pass through —
                 if a game doesn&apos;t work, we make it right. No questions asked.
               </p>

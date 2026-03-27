@@ -1,6 +1,9 @@
 export default function ReconditioningCTA() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-[#FFFFFF] section-divider">
+    <section
+      className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden section-divider"
+      style={{ background: 'var(--bg-primary)' }}
+    >
       {/* Background decorations */}
       <div className="absolute inset-0 hero-grid opacity-50" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#7B4EA0]/6 rounded-full blur-3xl pointer-events-none" />
@@ -11,13 +14,13 @@ export default function ReconditioningCTA() {
           <div className="inline-block mb-4">
             <span className="font-pixel text-[10px] text-[#7B4EA0] font-bold">// REPAIR &amp; RESTORE</span>
           </div>
-          <h2 className="font-pixel text-xl sm:text-2xl text-[#1A1020] mb-4 font-bold">
+          <h2 className="font-pixel text-xl sm:text-2xl mb-4 font-bold" style={{ color: 'var(--text-primary)' }}>
             Console{" "}
             <span className="text-[#7B4EA0] glow-purple">Reconditioning</span>
             <br />
             <span className="text-lg sm:text-xl">&amp; Disc Resurfacing</span>
           </h2>
-          <p className="text-[#4A4458] max-w-2xl mx-auto text-base leading-relaxed">
+          <p className="max-w-2xl mx-auto text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
             Don&apos;t throw out your broken classics — bring them to us.
             Our technicians restore consoles and discs to their former glory.
             Valerie&apos;s standards are high: if it leaves our shop, it works.
@@ -26,10 +29,16 @@ export default function ReconditioningCTA() {
 
         <div className="grid sm:grid-cols-2 gap-8 mb-10">
           {/* Console Reconditioning */}
-          <div className="bg-white border-l-4 border-l-[#7B4EA0] shadow-[0_4px_20px_rgba(123,78,160,0.15)] p-6">
+          <div
+            className="border-l-4 border-l-[#7B4EA0] p-6"
+            style={{
+              background: 'var(--bg-card)',
+              boxShadow: 'var(--card-shadow)',
+            }}
+          >
             <div className="text-4xl mb-4">🔧</div>
             <h3 className="font-pixel text-sm text-[#7B4EA0] mb-3 font-bold">Console Reconditioning</h3>
-            <ul className="space-y-2 text-sm text-[#4A4458]">
+            <ul className="space-y-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
               {[
                 "Deep cleaning (inside & out)",
                 "Laser lens cleaning & calibration",
@@ -48,10 +57,16 @@ export default function ReconditioningCTA() {
           </div>
 
           {/* Disc Resurfacing */}
-          <div className="bg-white border-l-4 border-l-[#48D8D0] shadow-[0_4px_20px_rgba(72,216,208,0.18)] p-6">
+          <div
+            className="border-l-4 border-l-[#48D8D0] p-6"
+            style={{
+              background: 'var(--bg-card)',
+              boxShadow: '0 4px 20px rgba(72,216,208,0.18)',
+            }}
+          >
             <div className="text-4xl mb-4">💿</div>
             <h3 className="font-pixel text-sm text-[#2AA8A2] mb-3 font-bold">Disc Resurfacing</h3>
-            <ul className="space-y-2 text-sm text-[#4A4458]">
+            <ul className="space-y-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
               {[
                 "Professional scratch removal",
                 "Disc polishing & buffing",
@@ -71,7 +86,7 @@ export default function ReconditioningCTA() {
         </div>
 
         <div className="text-center">
-          <p className="text-[#4A4458] text-sm mb-6">
+          <p className="text-sm mb-6" style={{ color: 'var(--text-secondary)' }}>
             Pricing varies by service complexity. Most repairs completed within 3–5 business days.
           </p>
           <a

@@ -58,21 +58,18 @@ const trustSignals = [
 const colorMap = {
   purple: {
     cardBorder: "border-l-4 border-l-[#7B4EA0]",
-    shadow: "shadow-[0_4px_20px_rgba(123,78,160,0.15)]",
     icon: "bg-[#7B4EA0]/20 text-[#7B4EA0]",
     stat: "text-[#7B4EA0]",
     label: "text-[#7B4EA0]/80",
   },
   teal: {
     cardBorder: "border-l-4 border-l-[#48D8D0]",
-    shadow: "shadow-[0_4px_20px_rgba(72,216,208,0.18)]",
     icon: "bg-[#48D8D0]/20 text-[#2AA8A2]",
     stat: "text-[#2AA8A2]",
     label: "text-[#2AA8A2]/80",
   },
   green: {
     cardBorder: "border-l-4 border-l-[#50C890]",
-    shadow: "shadow-[0_4px_20px_rgba(80,200,144,0.18)]",
     icon: "bg-[#50C890]/20 text-[#3A9A70]",
     stat: "text-[#3A9A70]",
     label: "text-[#3A9A70]/80",
@@ -81,17 +78,21 @@ const colorMap = {
 
 export default function WhyChooseUs() {
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F0EAF7] section-divider">
+    <section
+      id="about"
+      className="py-20 px-4 sm:px-6 lg:px-8 section-divider"
+      style={{ background: 'var(--bg-secondary)' }}
+    >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
             <span className="font-pixel text-[10px] text-[#7B4EA0] font-bold">// WHY DREAM QUEST</span>
           </div>
-          <h2 className="font-pixel text-xl sm:text-2xl text-[#1A1020] mb-4 font-bold">
+          <h2 className="font-pixel text-xl sm:text-2xl mb-4 font-bold" style={{ color: 'var(--text-primary)' }}>
             Why Choose <span className="text-[#2AA8A2] glow-teal">Us</span>
           </h2>
-          <p className="text-[#4A4458] max-w-2xl mx-auto text-base">
+          <p className="max-w-2xl mx-auto text-base" style={{ color: 'var(--text-secondary)' }}>
             In a world of online marketplaces and big-box retailers, Dream Quest is something different.
             A place where games are respected, history is preserved, and every customer matters.
           </p>
@@ -104,7 +105,11 @@ export default function WhyChooseUs() {
             return (
               <div
                 key={idx}
-                className={`bg-white ${colors.cardBorder} ${colors.shadow} p-6 card-hover transition-all duration-300`}
+                className={`${colors.cardBorder} p-6 card-hover transition-all duration-300`}
+                style={{
+                  background: 'var(--bg-card)',
+                  boxShadow: 'var(--card-shadow)',
+                }}
               >
                 {/* Icon + stat row */}
                 <div className="flex items-start justify-between mb-4">
@@ -117,27 +122,30 @@ export default function WhyChooseUs() {
                   </div>
                 </div>
 
-                <h3 className="font-pixel text-xs text-[#1A1020] mb-3 font-bold">{signal.title}</h3>
-                <p className="text-[#4A4458] text-sm leading-relaxed">{signal.description}</p>
+                <h3 className="font-pixel text-xs mb-3 font-bold" style={{ color: 'var(--text-primary)' }}>{signal.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{signal.description}</p>
               </div>
             );
           })}
         </div>
 
         {/* Valerie lore section */}
-        <div className="bg-white border-l-4 border-l-[#7B4EA0] shadow-[0_4px_20px_rgba(123,78,160,0.18)] p-8 sm:p-10">
+        <div
+          className="border-l-4 border-l-[#7B4EA0] shadow-[0_4px_20px_rgba(123,78,160,0.18)] p-8 sm:p-10"
+          style={{ background: 'var(--bg-card)' }}
+        >
           <div className="max-w-3xl mx-auto text-center">
             <div className="font-pixel text-[10px] text-[#7B4EA0] mb-4 font-bold">⚔️ THE LEGEND OF VALERIE ⚔️</div>
-            <h3 className="font-pixel text-base text-[#1A1020] mb-4 font-bold">
+            <h3 className="font-pixel text-base mb-4 font-bold" style={{ color: 'var(--text-primary)' }}>
               Our Mascot Has a Story
             </h3>
-            <p className="text-[#4A4458] text-sm leading-relaxed mb-4">
+            <p className="text-sm leading-relaxed mb-4" style={{ color: 'var(--text-secondary)' }}>
               Valerie the Viking didn&apos;t choose the quest — the quest chose her.
               A warrior of pixels and persistence, she once roamed the digital realms
               from Atari dungeons to PS5 boss battles. She&apos;s seen every era,
               fought every final boss, and traded in every game imaginable.
             </p>
-            <p className="text-[#4A4458] text-sm leading-relaxed">
+            <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
               Now she guards the Dream Quest vault, ensuring every game that passes
               through her hands is worthy of a new player&apos;s shelf. She&apos;s the reason
               we don&apos;t sell junk. She won&apos;t allow it.

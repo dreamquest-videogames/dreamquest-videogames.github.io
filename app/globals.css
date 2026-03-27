@@ -1,12 +1,45 @@
 @import "tailwindcss";
 
-:root {
+:root, [data-theme="light"] {
   --font-inter: "Inter", sans-serif;
   --font-press-start: "Press Start 2P", monospace;
   --color-purple: #7b4ea0;
   --color-teal: #48d8d0;
   --color-green: #50c890;
-  --color-bg: #fafafa;
+
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F0EAF7;
+  --bg-card: #FFFFFF;
+  --bg-nav: rgba(255,255,255,0.95);
+  --bg-footer: #1A1020;
+  --text-primary: #1A1020;
+  --text-secondary: #4A4458;
+  --text-nav: #4A4458;
+  --border-color: rgba(123,78,160,0.2);
+  --card-shadow: 0 4px 20px rgba(123,78,160,0.15);
+  --input-bg: #F8F5FC;
+  --input-border: rgba(123,78,160,0.3);
+  --scanline-opacity: 0.018;
+  --hero-grid-color: rgba(123,78,160,0.08);
+  --section-divider: linear-gradient(to right, #7B4EA0, #48D8D0, #50C890);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0A0E14;
+  --bg-secondary: #080C10;
+  --bg-card: rgba(255,255,255,0.03);
+  --bg-nav: rgba(10,14,20,0.95);
+  --bg-footer: #050510;
+  --text-primary: #FFFFFF;
+  --text-secondary: #9CA3AF;
+  --text-nav: #9CA3AF;
+  --border-color: rgba(123,78,160,0.4);
+  --card-shadow: 0 0 20px rgba(123,78,160,0.3);
+  --input-bg: #080C10;
+  --input-border: rgba(123,78,160,0.3);
+  --scanline-opacity: 0.05;
+  --hero-grid-color: rgba(123,78,160,0.12);
+  --section-divider: linear-gradient(to right, #7B4EA0, #48D8D0, #50C890);
 }
 
 * {
@@ -18,8 +51,8 @@ html {
 }
 
 body {
-  background-color: #ffffff;
-  color: #1a1020;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   font-family: var(--font-inter);
 }
 
@@ -43,8 +76,8 @@ body {
     0deg,
     transparent,
     transparent 2px,
-    rgba(0, 0, 0, 0.018) 2px,
-    rgba(0, 0, 0, 0.018) 4px
+    rgba(0, 0, 0, var(--scanline-opacity)) 2px,
+    rgba(0, 0, 0, var(--scanline-opacity)) 4px
   );
   pointer-events: none;
   z-index: 1;
@@ -66,7 +99,7 @@ body {
   box-shadow: 0 0 14px rgba(80, 200, 144, 0.35), inset 0 0 8px rgba(80, 200, 144, 0.07);
 }
 
-/* Glow text effects — boosted for light backgrounds */
+/* Glow text effects */
 .glow-purple {
   text-shadow:
     0 0 6px rgba(123, 78, 160, 1),
@@ -93,7 +126,7 @@ body {
 
 /* Card with shadow */
 .card-shadow {
-  box-shadow: 0 4px 20px rgba(123, 78, 160, 0.15);
+  box-shadow: var(--card-shadow);
 }
 
 .card-shadow-teal {
@@ -144,8 +177,8 @@ body {
 /* Hero grid background */
 .hero-grid {
   background-image:
-    linear-gradient(rgba(123, 78, 160, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(123, 78, 160, 0.07) 1px, transparent 1px);
+    linear-gradient(var(--hero-grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--hero-grid-color) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
@@ -165,7 +198,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f0eaf7;
+  background: var(--bg-secondary);
 }
 
 ::-webkit-scrollbar-thumb {

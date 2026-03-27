@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Press_Start_2P } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "./context/ThemeContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -86,9 +87,10 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${pressStart2P.variable} antialiased bg-[#FAFAFA] text-[#1A1020]`}
+        className={`${inter.variable} ${pressStart2P.variable} antialiased`}
+        style={{ background: 'var(--bg-primary)', color: 'var(--text-primary)' }}
       >
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
