@@ -33,7 +33,6 @@ export default function ReconditioningCTA() {
               {[
                 "Deep cleaning (inside & out)",
                 "Laser lens cleaning & calibration",
-                "Yellowing removal (retro consoles)",
                 "Cartridge slot & port cleaning",
                 "Power & AV output testing",
               ].map((item) => (
