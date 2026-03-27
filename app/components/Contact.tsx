@@ -145,9 +145,9 @@ export default function Contact() {
                   <span className="text-[#00BCD4] group-hover:scale-110 transition-transform">📞</span>
                   (360) 620-2354
                 </a>
-                <a href="mailto:hello@dreamquestvideogames.com" className="flex items-center gap-3 text-gray-300 hover:text-[#00BCD4] transition-colors text-sm group">
+                <a href="mailto:contact.dreamquest@gmail.com" className="flex items-center gap-3 text-gray-300 hover:text-[#00BCD4] transition-colors text-sm group">
                   <span className="text-[#00BCD4] group-hover:scale-110 transition-transform">📧</span>
-                  hello@dreamquestvideogames.com
+                  contact.dreamquest@gmail.com
                 </a>
                 <div className="flex items-start gap-3 text-gray-300 text-sm">
                   <span className="text-[#00BCD4]">📍</span>
