@@ -86,7 +86,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${pressStart2P.variable} antialiased bg-[#0A0E14] text-white`}
+        className={`${inter.variable} ${pressStart2P.variable} antialiased bg-[#FAFAFA] text-[#1A1020]`}
       >
         {children}
       </body>
