@@ -1,7 +1,6 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
-import FeaturedInventory from "./components/FeaturedInventory";
 import ReconditioningCTA from "./components/ReconditioningCTA";
 import WhyChooseUs from "./components/WhyChooseUs";
 import Contact from "./components/Contact";
@@ -13,7 +12,6 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Services />
-      <FeaturedInventory />
       <ReconditioningCTA />
       <WhyChooseUs />
       <Contact />
