@@ -56,8 +56,12 @@ const jsonLd = {
     "Retro and modern video game store offering buy/sell services, accessories, anime collectibles, console reconditioning, and disc resurfacing.",
   image: "/logo.jpg",
   priceRange: "$$",
+  telephone: "+13606202354",
   address: {
     "@type": "PostalAddress",
+    streetAddress: "19425 7th Ave. NE Suite 117",
+    addressLocality: "Poulsbo",
+    addressRegion: "WA",
     addressCountry: "US",
   },
   openingHours: "Mo-Sa 10:00-20:00",

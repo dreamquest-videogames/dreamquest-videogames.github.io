@@ -139,9 +139,9 @@ export default function Contact() {
             <div className="border border-[#00BCD4]/30 bg-[#0D0D1A] p-6">
               <h3 className="font-pixel text-xs text-[#00BCD4] mb-4">⚡ Quick Actions</h3>
               <div className="space-y-3">
-                <a href="tel:+15550000000" className="flex items-center gap-3 text-gray-300 hover:text-[#00BCD4] transition-colors text-sm group">
+                <a href="tel:+13606202354" className="flex items-center gap-3 text-gray-300 hover:text-[#00BCD4] transition-colors text-sm group">
                   <span className="text-[#00BCD4] group-hover:scale-110 transition-transform">📞</span>
-                  (555) 000-0000
+                  (360) 620-2354
                 </a>
                 <a href="mailto:hello@dreamquestvideogames.com" className="flex items-center gap-3 text-gray-300 hover:text-[#00BCD4] transition-colors text-sm group">
                   <span className="text-[#00BCD4] group-hover:scale-110 transition-transform">📧</span>
@@ -149,7 +149,7 @@ export default function Contact() {
                 </a>
                 <div className="flex items-start gap-3 text-gray-300 text-sm">
                   <span className="text-[#00BCD4]">📍</span>
-                  <span>Your City, State — Address Coming Soon</span>
+                  <span>19425 7th Ave. NE Suite 117<br />Poulsbo, WA</span>
                 </div>
               </div>
             </div>
