@@ -68,7 +68,7 @@ const jsonLd = {
   sameAs: [
     "https://www.facebook.com/dreamquestpoulsbo/",
     "https://www.instagram.com/dreamquestgames/",
-    "https://twitter.com/dreamquestgames",
+    "https://bsky.app/profile/dreamquestgames.bsky.social",
   ],
 };
 

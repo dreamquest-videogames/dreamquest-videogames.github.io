@@ -161,7 +161,7 @@ export default function Contact() {
                 {[
                   { name: "Instagram", handle: "@dreamquestgames", icon: "📸", url: "https://www.instagram.com/dreamquestgames/" },
                   { name: "Facebook", handle: "dreamquestpoulsbo", icon: "📘", url: "https://www.facebook.com/dreamquestpoulsbo/" },
-                  { name: "Twitter/X", handle: "@dreamquestgames", icon: "🐦", url: "https://twitter.com/dreamquestgames" },
+                  { name: "Bluesky", handle: "@dreamquestgames.bsky.social", icon: "🦋", url: "https://bsky.app/profile/dreamquestgames.bsky.social" },
                   { name: "TikTok", handle: "@dreamquestvg", icon: "🎵", url: "https://www.tiktok.com/@dreamquestvg" },
                 ].map((social) => (
                   <a
