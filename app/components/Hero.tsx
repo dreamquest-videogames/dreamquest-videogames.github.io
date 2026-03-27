@@ -38,12 +38,6 @@ export default function Hero() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
-                href="#inventory"
-                className="inline-flex items-center justify-center px-8 py-4 font-pixel text-xs text-white bg-[#7B4EA0] hover:bg-[#9B6FD0] border-2 border-[#7B4EA0] btn-glow transition-all duration-200 pixel-corners"
-              >
-                Browse Inventory
-              </a>
-              <a
                 href="#contact"
                 className="inline-flex items-center justify-center px-8 py-4 font-pixel text-xs text-[#48D8D0] bg-transparent hover:bg-[#48D8D0]/10 border-2 border-[#48D8D0] btn-glow-teal transition-all duration-200 pixel-corners"
               >
