@@ -78,7 +78,7 @@ export default function ReconditioningCTA() {
             href="#contact"
             className="inline-flex items-center px-10 py-4 font-pixel text-xs text-white bg-[#7B4EA0] hover:bg-[#9B6FD0] border-2 border-[#7B4EA0] btn-glow transition-all duration-200 pixel-corners"
           >
-            Get a Repair Quote →
+            Get a Quote →
           </a>
         </div>
       </div>
