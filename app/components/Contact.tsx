@@ -14,6 +14,13 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const subject = encodeURIComponent(
+      `[Dream Quest] ${c.form.subjects.find(s => s.value === formData.subject)?.label ?? formData.subject}`
+    );
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+    );
+    window.location.href = `mailto:${content.email}?subject=${subject}&body=${body}`;
     setSubmitted(true);
   };
 
