@@ -10,6 +10,8 @@ backend:
 # Uncomment to enable draft/review workflow (requires GitHub Pro or public repo):
 # publish_mode: editorial_workflow
 
+logo_url: /logo.jpg
+
 media_folder: public/images
 public_folder: /images
 
