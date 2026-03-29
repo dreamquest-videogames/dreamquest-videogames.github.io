@@ -226,7 +226,6 @@
     "copyright": "⚔️ Guarded by Valerie the Viking © 2024 Dream Quest Video Games",
     "exploreLinks": [
       { "href": "#services",  "label": "Our Services" },
-      { "href": "#inventory", "label": "Featured Inventory" },
       { "href": "#about",     "label": "About Us" },
       { "href": "#contact",   "label": "Contact" }
     ],
