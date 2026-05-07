@@ -73,6 +73,10 @@ export default function Navbar() {
                 Video Games
               </span>
             </div>
+            {/* Phone number - visible on mobile */}
+            <div className="md:hidden">
+              <span className="font-pixel text-[9px] text-[#48D8D0]">360-620-2354</span>
+            </div>
           </a>
 
           {/* Desktop nav */}
@@ -91,6 +95,10 @@ export default function Navbar() {
 
           {/* CTA + Socials + Theme Toggle */}
           <div className="flex items-center gap-4">
+            {/* Phone number - visible on desktop */}
+            <div className="hidden md:block">
+              <span className="font-pixel text-[10px] text-[#48D8D0]">360-620-2354</span>
+            </div>
             {/* Social icons — desktop only */}
             <div className="hidden md:flex items-center gap-3">
               {socials.map((s) => (
