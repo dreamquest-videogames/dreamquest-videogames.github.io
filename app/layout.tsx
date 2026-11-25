@@ -64,7 +64,7 @@ const jsonLd = {
     addressRegion: content.address.state,
     addressCountry: "US",
   },
-  openingHours: ["Mo-Tu 11:00-19:00", "Th-Su 11:00-19:00"],
+  openingHours: ["Mo-Tu 12:00-19:00", "Th-Su 12:00-19:00"],
   sameAs: [
     content.social.facebook.url,
     content.social.instagram.url,
