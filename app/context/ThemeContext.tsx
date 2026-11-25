@@ -3,17 +3,20 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 type Theme = "light" | "dark";
 const ThemeContext = createContext<{ theme: Theme; toggle: () => void }>({
-  theme: "light",
+  theme: "dark",
   toggle: () => {},
 });
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("light");
+  // layout.tsx resolves the saved theme onto <html data-theme> before
+  // first paint; start React state from it to avoid a hydration flash.
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof document === "undefined") return "dark";
+    return document.documentElement.getAttribute("data-theme") === "light"
+      ? "light"
+      : "dark";
+  });
 
-  useEffect(() => {
-    const saved = localStorage.getItem("dq-theme") as Theme | null;
-    if (saved) setTheme(saved);
-  }, []);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
