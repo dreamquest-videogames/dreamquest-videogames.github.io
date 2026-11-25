@@ -12,13 +12,13 @@
   },
 
   "hours": [
-    { "day": "Monday",    "time": "11:00 AM – 7:00 PM" },
-    { "day": "Tuesday",   "time": "11:00 AM – 7:00 PM" },
+    { "day": "Monday",    "time": "12:00 PM – 7:00 PM" },
+    { "day": "Tuesday",   "time": "12:00 PM – 7:00 PM" },
     { "day": "Wednesday", "time": "Closed" },
-    { "day": "Thursday",  "time": "11:00 AM – 7:00 PM" },
-    { "day": "Friday",    "time": "11:00 AM – 7:00 PM" },
-    { "day": "Saturday",  "time": "11:00 AM – 7:00 PM" },
-    { "day": "Sunday",    "time": "11:00 AM – 7:00 PM" }
+    { "day": "Thursday",   "time": "12:00 PM – 7:00 PM" },
+    { "day": "Friday",     "time": "12:00 PM – 7:00 PM" },
+    { "day": "Saturday",   "time": "12:00 PM – 7:00 PM" },
+    { "day": "Sunday",     "time": "12:00 PM – 7:00 PM" }
   ],
 
   "hero": {
@@ -216,6 +216,14 @@
       "url": "https://bsky.app/profile/dreamquestgames.bsky.social",
       "handle": "@dreamquestgames.bsky.social"
     }
+  },
+
+  "blueskyFeed": {
+    "sectionLabel": "// FRESH FROM THE SKY",
+    "heading": "Latest From the Shop",
+    "subheading": "See what's hitting our shelf — straight from our Bluesky feed, updated whenever we post.",
+    "followLabel": "Follow us on Bluesky",
+    "errorText": "The feed is resting. Catch our latest posts on Bluesky."
   },
 
   "footer": {
