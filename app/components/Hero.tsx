@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import content from "../../public/content.json";
+import BlueskyFeed from "./BlueskyFeed";
 
 // Build open/close schedule from content.json hours
 // "Closed" entries map to null; others parse "HH:MM AM/PM" → 24h integers
@@ -58,7 +59,7 @@ export default function Hero() {
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#7B4EA0]/12 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#48D8D0]/12 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-6 w-full">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             {/* Text content */}
             <div className="flex-1 text-center lg:text-left">
@@ -166,9 +167,13 @@ export default function Hero() {
               </div>
             </div>
           </div>
+
+          {/* Live Bluesky carousel in the same frame */}
+          <div className="max-w-3xl mx-auto mt-10">
+            <BlueskyFeed />
+          </div>
         </div>
       </div>
-
       {/* Bottom section divider */}
       <div className="h-0.5 w-full bg-gradient-to-r from-[#7B4EA0] via-[#48D8D0] to-[#50C890] flex-shrink-0" />
     </section>

@@ -225,6 +225,14 @@ collections:
                   - { label: "URL", name: "url", widget: "string" }
                   - { label: "Handle", name: "handle", widget: "string" }
 
+
+          # ── BLUESKY FEED ──────────────────────────────────────
+          - label: "Bluesky Feed Section"
+            name: "blueskyFeed"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Error Text (shown if the feed fails to load)", name: "errorText", widget: "string" }
           # ── FOOTER ─────────────────────────────────────────────
           - label: "Footer"
             name: "footer"

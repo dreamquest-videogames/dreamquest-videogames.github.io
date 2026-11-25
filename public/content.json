@@ -219,10 +219,6 @@
   },
 
   "blueskyFeed": {
-    "sectionLabel": "// FRESH FROM THE SKY",
-    "heading": "Latest From the Shop",
-    "subheading": "See what's hitting our shelf — straight from our Bluesky feed, updated whenever we post.",
-    "followLabel": "Follow us on Bluesky",
     "errorText": "The feed is resting. Catch our latest posts on Bluesky."
   },
 
